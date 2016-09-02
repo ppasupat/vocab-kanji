@@ -1,91 +1,87 @@
 <kanji>
-
-<book name="Japanese I" shortname="I" id="book_j1">
-<chapter name="3">一二三四五六七八九十百千万円何</chapter>
-<chapter name="4">分行来高安大小田中日本山語川</chapter>
-<chapter name="5">人白黒赤青雨見同少車国和英</chapter>
-<chapter name="6">先生学出入口前間右左店電話方</chapter>
+<book name="E1" shortname="E1" id="E1">
+<chapter name="1">一右雨円王音下火花貝学気九休玉金空月犬見五口校左三山子四糸字耳七車手十出女小上森</chapter>
+<chapter name="41">人水正生青夕石赤千川先早草足村大男竹中虫町天田土二日入年白八百文木本名目立力林六</chapter>
 </book>
-
-<book name="Japanese II" shortname="II" id="book_j2">
-<chapter name="7">名書手紙下新古聞校食買作今屋</chapter>
-<chapter name="8">月火水木金土曜時休毎年半午後</chapter>
-<chapter name="9">朝晩週東京忙早私村友次上寺明</chapter>
-<chapter name="10">子女男待知困林仕事使去飲外当</chapter>
-<chapter name="11">父母兄弟姉妹主内家両親会社思</chapter>
-<chapter name="12">漢字言読駅勉強申用銀地図番号</chapter>
+<book name="E2" shortname="E2" id="E2">
+<chapter name="81">引羽雲園遠何科夏家歌画回会海絵外角楽活間丸岩顔汽記帰弓牛魚京強教近兄形計元言原戸</chapter>
+<chapter name="121">古午後語工公広交光考行高黄合谷国黒今才細作算止市矢姉思紙寺自時室社弱首秋週春書少</chapter>
+<chapter name="161">場色食心新親図数西声星晴切雪船線前組走多太体台地池知茶昼長鳥朝直通弟店点電刀冬当</chapter>
+<chapter name="201">東答頭同道読内南肉馬売買麦半番父風分聞米歩母方北毎妹万明鳴毛門夜野友用曜来里理話</chapter>
 </book>
-
-<book name="Japanese III" shortname="III" id="book_j3">
-<chapter name="13">森度野切所長近研究代教宅貸借目声客席</chapter>
-<chapter name="14">昼飯願元気室止歩調茶院丁工部定酒違彼</chapter>
-<chapter name="15">洋鳥魚肉物海特持天米料理全好杯初連君</chapter>
-<chapter name="16">寒暑開閉消写真着楽様道戸忘都帰変寄置参</chapter>
-<chapter name="17">伝送直決花病痛体薬頭失礼医者科足耳枚員</chapter>
+<book name="E3" shortname="E3" id="E3">
+<chapter name="241">悪安暗医委意育員院飲運泳駅央横屋温化荷界開階寒感漢館岸起期客究急級宮球去橋業曲局</chapter>
+<chapter name="281">銀区苦具君係軽血決研県庫湖向幸港号根祭皿仕死使始指歯詩次事持式実写者主守取酒受州</chapter>
+<chapter name="321">拾終習集住重宿所暑助昭消商章勝乗植申身神真深進世整昔全相送想息速族他打対待代第題</chapter>
+<chapter name="361">炭短談着注柱丁帳調追定庭笛鉄転都度投豆島湯登等動童農波配倍箱畑発反坂板皮悲美鼻筆</chapter>
+<chapter name="401">氷表秒病品負部服福物平返勉放味命面問役薬由油有遊予羊洋葉陽様落流旅両緑礼列練路和</chapter>
 </book>
-
-<book name="Japanese IV" shortname="IV" id="book_j4">
-<chapter name="18">合冷実覚色若世奥授松竹池難説島横具存犬</chapter>
-<chapter name="19">立課発集南北西回符鉄売替場付通州政治性普</chapter>
-<chapter name="20">頼便利不速急多重平成乗降町市自個心配軽券</chapter>
-<chapter name="21">旅館泊予約末熱別無遅取起宿民昨階助経済験</chapter>
-<chapter name="22">晴曇風窓雪練習公園春夏秋冬辞台遠才関係空港</chapter>
+<book name="E4" shortname="E4" id="E4">
+<chapter name="441">愛案以衣位囲胃印英栄塩億加果貨課芽改械害街各覚完官管関観願希季紀喜旗器機議求泣救</chapter>
+<chapter name="481">給挙漁共協鏡競極訓軍郡径型景芸欠結建健験固功好候航康告差菜最材昨札刷殺察参産散残</chapter>
+<chapter name="521">士氏史司試児治辞失借種周祝順初松笑唱焼象照賞臣信成省清静席積折節説浅戦選然争倉巣</chapter>
+<chapter name="561">束側続卒孫帯隊達単置仲貯兆腸低底停的典伝徒努灯堂働特得毒熱念敗梅博飯飛費必票標不</chapter>
+<chapter name="601">夫付府副粉兵別辺変便包法望牧末満未脈民無約勇要養浴利陸良料量輪類令冷例歴連老労録</chapter>
 </book>
-
-<book name="Japanese V" shortname="V" id="book_j5">
-<chapter name="23A">過涼歯暖服焼慣結婚式夜悪映画細葉</chapter>
-<chapter name="23B">系厚役呼似神反対正業考弱念届味庭</chapter>
-<chapter name="24A">背残住例詳団橋留守払探阪師有顔</chapter>
-<chapter name="24B">広狭動産運賃問題価洗面交転束首向</chapter>
-<chapter name="25A">勤働専門始訳線必要的寝預僕雷雲戻</chapter>
-<chapter name="25B">化歴史類宗試終数喜養渡相談肩頂</chapter>
-<chapter name="26A">押引答拾落倒混就職曲輩棚距離床議</chapter>
-<chapter name="26B">最低遊続句文季節寂怖嬉疲承越打接</chapter>
+<book name="E5" shortname="E5" id="E5">
+<chapter name="641">圧移因永営衛易益液演応往桜恩可仮価河過賀快解格確額刊幹慣眼基寄規技義逆久旧居許境</chapter>
+<chapter name="681">均禁句群経潔件券険検限現減故個護効厚耕鉱構興講混査再災妻採際在財罪雑酸賛支志枝師</chapter>
+<chapter name="721">資飼示似識質舎謝授修述術準序招承証条状常情織職制性政勢精製税責績接設舌絶銭祖素総</chapter>
+<chapter name="761">造像増則測属率損退貸態団断築張提程適敵統銅導徳独任燃能破犯判版比肥非備俵評貧布婦</chapter>
+<chapter name="801">富武復複仏編弁保墓報豊防貿暴務夢迷綿輸余預容略留領</chapter>
 </book>
-
-<book name="Japanese VI" shortname="VI" id="book_j6">
-<chapter name="27A">嫌卒選責任表受育担貿易札務商</chapter>
-<chapter name="27B">亡死増延活典温植絡湖果菜召泳容</chapter>
-<chapter name="28A">敬塩老招返甘雑農誌濃薄腕縛傷幸桜登堂</chapter>
-<chapter name="28B">祭確音講演義拝歌案億器欠冊期件秘密求</chapter>
-<chapter name="29A">可能静厳迷惑注誤解叱余計偉形算達勝負意</chapter>
-<chapter name="29B">笑泣寧断毒希望夢我複簡単感情質支靴捨</chapter>
-<chapter name="30A">勧恩均美術苦機械納得珍比建築恐居街隣</chapter>
-<chapter name="30B">慢記環境界詩告然命禁煙謝汚腐暗論光悲</chapter>
+<book name="E6" shortname="E6" id="E6">
+<chapter name="826">異遺域宇映延沿我灰拡革閣割株干巻看簡危机揮貴疑吸供胸郷勤筋系敬警劇激穴絹権憲源厳</chapter>
+<chapter name="866">己呼誤后孝皇紅降鋼刻穀骨困砂座済裁策冊蚕至私姿視詞誌磁射捨尺若樹収宗就衆従縦縮熟</chapter>
+<chapter name="906">純処署諸除将傷障城蒸針仁垂推寸盛聖誠宣専泉洗染善奏窓創装層操蔵臓存尊宅担探誕段暖</chapter>
+<chapter name="946">値宙忠著庁頂潮賃痛展討党糖届難乳認納脳派拝背肺俳班晩否批秘腹奮並陛閉片補暮宝訪亡</chapter>
+<chapter name="986">忘棒枚幕密盟模訳郵優幼欲翌乱卵覧裏律臨朗論</chapter>
 </book>
-
-<book name="KD 4 - 5 Stars" shortname="KD" id="kanjidamage_45">
-<chapter name="5">皆信怒力緒誰走指太割虫貝酔巣愛裏良娘豆満短種排座法由危乳欲身追常</chapter>
-<chapter name="4">了息点態認丸省糸舌超恥辺込想保未燃募王玉駐害素乾悔毛現況側角触深完夫格携級扱戦識換敵適販減袋状制優石頑訓脱恋途姿快尊悩族観権非在髪影健氏眠察型牛絶像芸絵抗投殺値皮偶抱警驚局盗血般独犯御組飛共暴再他労康争基邪逆以段興為偽</chapter>
+<book name="J1" shortname="J1" id="J1">
+<chapter name="1007">亜哀挨曖握扱宛嵐依威為畏尉萎偉椅彙違維慰緯壱逸茨芋咽姻淫陰隠韻唄鬱畝浦詠影鋭疫悦</chapter>
+<chapter name="1047">越謁閲炎怨宴媛援煙猿鉛縁艶汚凹押旺欧殴翁奥岡憶臆虞乙俺卸穏佳苛架華菓渦嫁暇禍靴寡</chapter>
+<chapter name="1087">箇稼蚊牙瓦雅餓介戒怪拐悔皆塊楷潰壊懐諧劾崖涯慨蓋該概骸垣柿核殻郭較隔獲嚇穫岳顎掛</chapter>
+<chapter name="1127">潟括喝渇葛滑褐轄且釜鎌刈甘汗缶肝冠陥乾勘患貫喚堪換敢棺款閑勧寛歓監緩憾還環韓艦鑑</chapter>
+<chapter name="1167">含玩頑企伎岐忌奇祈軌既飢鬼亀幾棋棄毀畿輝騎宜偽欺儀戯擬犠菊吉喫詰却脚虐及丘朽臼糾</chapter>
 </book>
-
-<book name="Frequent 300" shortname="F" id="freq_300">
-<chapter name="100">党県設第軍</chapter>
-<chapter name="150">品位放協統原総加区領進改</chapter>
-<chapter name="200">等派報府際資査委流称路判</chapter>
-<chapter name="250">造策製官属域示各隊移革</chapter>
-<chapter name="300">備馬提士挙構勢撃応録歳球城企編疑税検装藤営賞技沢裁</chapter>
+<book name="J2" shortname="J2" id="J2">
+<chapter name="1207">嗅窮巨拒拠虚距御凶叫狂享況峡挟狭恐恭脅矯響驚仰暁凝巾斤菌琴僅緊錦謹襟吟駆惧愚偶遇</chapter>
+<chapter name="1247">隅串屈掘窟熊繰勲薫刑茎契恵啓掲渓蛍傾携継詣慶憬稽憩鶏迎鯨隙撃桁傑肩倹兼剣拳軒圏堅</chapter>
+<chapter name="1287">嫌献遣賢謙鍵繭顕懸幻玄弦舷股虎孤弧枯雇誇鼓錮顧互呉娯悟碁勾孔巧甲江坑抗攻更拘肯侯</chapter>
+<chapter name="1327">恒洪荒郊香貢控梗喉慌硬絞項溝綱酵稿衡購乞拷剛傲豪克酷獄駒込頃昆恨婚痕紺魂墾懇佐沙</chapter>
+<chapter name="1367">唆詐鎖挫采砕宰栽彩斎債催塞歳載埼剤崎削柵索酢搾錯咲刹拶撮擦桟惨傘斬暫旨伺刺祉肢施</chapter>
 </book>
-
-<book name="JSL Extra" shortname="X" id="jsl_extra">
-<chapter name="X">匂劇丈障香管暇箱吸机羽皿胃坂谷筆介緑祖鏡除臭灰蔵聴弁布紅夕列折掛帯宮帳張氷紹刻故黄片草迎勘衣略景修卵鳴腹胸掃砂梅律頃福騒辛舞財宣覧並喫縮油妻刺眼衆供児臓魔永婦華腰郵浴酸震看湯誘標差麦猫昭撮船鼻帽久護壊懐柔糖締散波仮致荷幹司固汽</chapter>
+<book name="J3" shortname="J3" id="J3">
+<chapter name="1407">恣脂紫嗣雌摯賜諮侍滋慈餌璽鹿軸叱疾執湿嫉漆芝赦斜煮遮邪蛇酌釈爵寂朱狩殊珠腫趣寿呪</chapter>
+<chapter name="1447">需儒囚舟秀臭袖羞愁酬醜蹴襲汁充柔渋銃獣叔淑粛塾俊瞬旬巡盾准殉循潤遵庶緒如叙徐升召</chapter>
+<chapter name="1487">匠床抄肖尚昇沼宵症祥称渉紹訟掌晶焦硝粧詔奨詳彰憧衝償礁鐘丈冗浄剰畳縄壌嬢錠譲醸拭</chapter>
+<chapter name="1527">殖飾触嘱辱尻伸芯辛侵津唇娠振浸紳診寝慎審震薪刃尽迅甚陣尋腎須吹炊帥粋衰酔遂睡穂随</chapter>
+<chapter name="1567">髄枢崇据杉裾瀬是井姓征斉牲凄逝婿誓請醒斥析脊隻惜戚跡籍拙窃摂仙占扇栓旋煎羨腺詮践</chapter>
 </book>
-
-<book name="My Extra" shortname="Y" id="my_extra">
-<chapter name="Y">仏仲俺停刀功央奏姫宙射巻庫憂敗昔星材板枝準熊版猿秒穴罪羊脳証詞象郷量針陽韓飼鬱</chapter>
-<chapter name="V">涙振揺突逃隠嘘踊抜処染視吐狂奇溢暮埋響限伸闇麗浮照輪勇憶輝崩鹿許跡叫瞬咲鼓零裂駆繋包繰溶載微</chapter>
-<chapter name="T">弾幕幽霊妖怪精縦紫範程異殿更攻収避狙被旧漫費幻諦</chapter>
+<book name="J4" shortname="J4" id="J4">
+<chapter name="1607">箋潜遷薦繊鮮禅漸膳繕狙阻租措粗疎訴塑遡礎双壮荘捜挿桑掃曹曽爽喪痩葬僧遭槽踪燥霜騒</chapter>
+<chapter name="1647">藻憎贈即促捉俗賊遜汰妥唾堕惰駄耐怠胎泰堆袋逮替滞戴滝択沢卓拓託濯諾濁但脱奪棚誰丹</chapter>
+<chapter name="1687">旦胆淡嘆端綻鍛弾壇恥致遅痴稚緻畜逐蓄秩窒嫡沖抽衷酎鋳駐弔挑彫眺釣貼超跳徴嘲澄聴懲</chapter>
+<chapter name="1727">勅捗沈珍朕陳鎮椎墜塚漬坪爪鶴呈廷抵邸亭貞帝訂逓偵堤艇締諦泥摘滴溺迭哲徹撤添填殿斗</chapter>
+<chapter name="1767">吐妬途渡塗賭奴怒到逃倒凍唐桃透悼盗陶塔搭棟痘筒稲踏謄藤闘騰洞胴瞳峠匿督篤栃凸突屯</chapter>
 </book>
-
-<book name="Kyouiku I - IV" shortname="K4" id="book_k1234">
-<chapter name="II">岩弓矢里</chapter>
-<chapter name="III">岸根章整炭柱笛童倍畑</chapter>
-<chapter name="IV">囲印栄貨芽紀旗救給漁競極郡径候航刷周祝順唱臣清積浅倉孫貯兆腸底徒努灯博票副粉兵牧脈陸令</chapter>
+<book name="J5" shortname="J5" id="J5">
+<chapter name="1807">豚頓貪鈍曇丼那奈梨謎鍋軟尼弐匂虹尿妊忍寧捻粘悩濃把覇婆罵杯排廃輩培陪媒賠伯拍泊迫</chapter>
+<chapter name="1847">剥舶薄漠縛爆箸肌鉢髪伐抜罰閥氾帆汎伴阪畔般販斑搬煩頒範繁藩蛮盤妃彼披卑疲被扉碑罷</chapter>
+<chapter name="1887">避尾眉微膝肘匹泌姫漂苗描猫浜賓頻敏瓶扶怖阜附訃赴浮符普腐敷膚賦譜侮舞封伏幅覆払沸</chapter>
+<chapter name="1927">紛雰噴墳憤丙併柄塀幣弊蔽餅壁璧癖蔑偏遍哺捕舗募慕簿芳邦奉抱泡胞俸倣峰砲崩蜂飽褒縫</chapter>
+<chapter name="1967">乏忙坊妨房肪某冒剖紡傍帽貌膨謀頬朴睦僕墨撲没勃堀奔翻凡盆麻摩磨魔昧埋膜枕又抹慢漫</chapter>
 </book>
-
-<book name="Kyouiku V - VI" shortname="K6" id="book_k56">
-<chapter name="V">圧因衛益液往河賀額刊規群潔険効耕鉱災採賛志舎述序条織績銭則測率損退銅導徳破肥俵評貧富武復墓豊防綿輸</chapter>
-<chapter name="VI">遺宇沿拡閣株干揮貴筋激絹憲源己后孝皇鋼穀骨蚕至磁尺樹従熟純署諸将蒸仁垂推寸盛聖誠泉善創層操誕忠著庁潮展討肺俳班否批奮陛補宝訪棒盟模幼翌乱臨朗</chapter>
+<book name="J6" shortname="J6" id="J6">
+<chapter name="2007">魅岬蜜妙眠矛霧娘冥銘滅免麺茂妄盲耗猛網黙紋冶弥厄躍闇喩愉諭癒唯幽悠湧猶裕雄誘憂融</chapter>
+<chapter name="2047">与誉妖庸揚揺溶腰瘍踊窯擁謡抑沃翼拉裸羅雷頼絡酪辣濫藍欄吏痢履璃離慄柳竜粒隆硫侶虜</chapter>
+<chapter name="2087">慮了涼猟陵僚寮療瞭糧厘倫隣瑠涙累塁励戻鈴零霊隷齢麗暦劣烈裂恋廉錬呂炉賂露弄郎浪廊楼漏籠麓賄脇惑枠湾腕</chapter>
 </book>
-
+<book name="X" shortname="X" id="X">
+<chapter name="2137">曰昌碍朋萌揃哨梢汐儚捏圭桂蛙鮭窪褻菱噌馴云桧荻梱呆沫粥錆靖醤亥瓜狐翔蒙掻燭也辰嘘</chapter>
+<chapter name="2177">塵蘇蔦烏錐鷹玻瑕訊巫巳迄苑碗卯溜榴匕疵柴屁乖狼笠彦謗撫梓姦呑炒雀舐罠餃眩呟於贅掴</chapter>
+<chapter name="2217">獅儲躇猪渚胡糊疹脹濡媚倶揖爺叩只杏垢癌覗桐筈頁乃綴丑紐禄棲伊糞撥允弘殆飴怯遥噛幌</chapter>
+<chapter name="2257">銑浣挽冤厨嬉酉噂溢吊勿誹匁勺豹秤迂嘩釘阿綺肛蝋桶蒲茜栗楠騙漕或磯戌蛾揉憚智膣裳嬌</chapter>
+<chapter name="2297">鹸猥鯉鴨寅洩轟蓮繋錘椒歪胚絆謳亘喧壷之逢祷躊椿捧牌吾函聘鳩旭叶辻杖廿貰笹喋蝶諜柏</chapter>
+</book>
 </kanji>

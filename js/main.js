@@ -7,10 +7,10 @@ $(function () {
       kanjinetwork_json = "data/kanjinetwork.json",
       list_name = gup("list"),
       kanji_xml = {
-        "extra":     "data/kanjilist-extra.xml",
-        "neo":       "data/kanjilist-neo.xml",
-        "henshall":  "data/kanjilist-henshall.xml",
-        "kklc":      "data/kanjilist-kklc.xml",
+        "old":    "data/kanjilist-old.xml",
+        "extra":  "data/kanjilist-extra.xml",
+        "neo":    "data/kanjilist-neo.xml",
+        "kklc":   "data/kanjilist-kklc.xml",
       }[list_name] || "data/kanjilist.xml",
       parts_not_loaded = 5;
 
