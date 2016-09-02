@@ -172,7 +172,7 @@ p {
   clear: both;
   padding-top: 10px;
 }
-#wordList span, #jlptList span {
+#wordList a, #jlptList a {
   display: block;
   float: left;
   font-size: 20pt;
@@ -182,8 +182,10 @@ p {
   border-radius: 5px;
   box-shadow: 1px 1px 5px -1px #AAA;
   background-color: #E5E5E5;
+  color: #111;
+  text-decoration: none;
 }
-#jlptList span.n2 {
+#jlptList a.n2 {
   background-color: #BBC;
 }
 #clearList {

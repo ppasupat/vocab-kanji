@@ -199,6 +199,13 @@ $(function () {
 
   var BLANK = "\u3000";
 
+  var wwwjdicUrl = "http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ";
+  var getAnchor = function (text) {
+    return $("<a>").text(text)
+      .attr('href', wwwjdicUrl + text)
+      .attr('target', 'extFrame');
+  }
+
   var query = function () {
     var c = firstChar($("#txtChar").val());
     // Clear the display
@@ -213,19 +220,19 @@ $(function () {
     $.grep(words, function (tuple, index) {
       return pattern.test(tuple[0]);
     }).forEach(function (tuple) {
-      $("#wordList").append($("<span>").text(tuple[0])
+      $("#wordList").append(getAnchor(tuple[0])
                             .css("background-color", 
                                  colorCode(tuple[1])));
     });
     $.grep(jlptWords, function (word, index) {
       return pattern.test(word);
     }).forEach(function (word) {
-      $("#jlptList").append($("<span>").text(word));
+      $("#jlptList").append(getAnchor(word));
     });
     $.grep(jlpt2Words, function (word, index) {
       return pattern.test(word);
     }).forEach(function (word) {
-      $("#jlptList").append($("<span class='n2'>").text(word));
+      $("#jlptList").append(getAnchor(word).addClass('n2'));
     });
     $("#charDesc").show();
     
@@ -283,6 +290,7 @@ $(function () {
     kanjinetwork_mapping = data;
     increment_loaded();
   });
+
   var goToSite = function () {
     if ($("#theChar").text() === BLANK) return;
     var sitename = $("#selSearch").val();
