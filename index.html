@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Vocab-Kanji</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/util.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+
+<div id="charSel">
+  <div id="charSelUpper" class="centerize">
+    <h1>Vocab-Kanji</h1>
+    <div>
+      <form id="formChar">
+        <input type="text" id="txtChar"/>
+      </form>
+      <select id="selSearch">
+        <option value="btnX" selected="selected">None</option>
+        <option disabled>──────────</option>
+        <option value="btnWWWJDIC">WWWJDIC</option>
+        <option value="btnChise">Chise</option>
+        <option value="btnKotobank">Kotobank</option>
+        <option disabled>──────────</option>
+        <option value="btnCEty">C Etymology</option>
+        <option value="btnCChr">C Character</option>
+        <option value="btnZDic">ZDic</option>
+        <option value="btnGGArt">GG-Art</option>
+        <option disabled>──────────</option>
+        <option value="btnWikiE">Wiktionary EN</option>
+        <option value="btnWikiJ">Wiktionary JA</option>
+        <option value="btnNico">NicoNicoPedia</option>
+        <option disabled>──────────</option>
+        <option value="btnKDamage">KanjiDamage</option>
+        <option value="btnKago">Kanji Family</option>
+        <option value="btnKNet">KanjiNetwork</option>
+        <option value="btnXiu">Xiuwenyuan</option>
+        <!--option value="btnYamasa">Yamasa</option-->
+        <!--option value="btnYB">YellowBridge</option-->
+      </select>
+    </div>
+  </div>
+  <div id="charSelLower">
+    <div id="bookList"></div>
+    <div class="clear"></div>
+    <div id="bookChar"></div>
+  </div>
+</div>
+<div id="charDisp">
+  <div id="charDispInner">
+    <div class="side-char" id="charDispInnerLeft"><div id="charTrad"></div></div>
+    <div class="big-char" id="theChar">&#12288;</div>
+    <div class="side-char" id="charDispInnerRight"><div id="charSimp"></div></div>
+  </div>
+  <div id="charDesc">
+    <div id="wordList" class="desc-wrapper"></div>
+    <div id="jlptList" class="desc-wrapper"></div>
+    <div id="clearList" class="clear"></div>
+  </div>
+</div>
+<div id="extWeb">
+  <iframe id="extFrame" name="extFrame" src=""></iframe>
+</div>
+</body>
+</html>
