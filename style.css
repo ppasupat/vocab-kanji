@@ -163,24 +163,6 @@ p {
   text-align: center;
   z-index: 1;
 }
-.side-char {
-  position: absolute;
-  line-height: 64pt;
-  top: 10px;
-  color: #AAA;
-}
-#charDispInnerLeft {
-  right: calc(50% + 48pt);
-}
-#charDispInnerRight {
-  left: calc(50% + 48pt);
-}
-#charSimp {
-  font-family: "STKaiti", "AR PL UMing CN", "KaiTi";
-}
-#charTrad {
-  font-family: "STKaiti", "AR PL UMing TW", "DFKai-SB";
-}
 
 /* charDesc */
 #charDesc {

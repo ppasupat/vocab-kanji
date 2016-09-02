@@ -4,27 +4,21 @@ $(function () {
   var vocab_xml = "data/jsl-vocablist-filtered.xml",
       jlpt_txt = "data/jlpt3-5.html",
       jlpt_2 = "data/jlpt2.html",
-      kanji_xml = "data/kanjilist.xml",
       kanjinetwork_json = "data/kanjinetwork.json",
       list_name = gup("list"),
-      show_chinese = (gup("chinese") === "show"),
-      use_wayback_machine = (gup("wayback") === "true"),
-      parts_not_loaded = show_chinese ? 7 : 5;
-
-  if (list_name === "extra") {
-    kanji_xml = "data/kanjilist-extra.xml";
-  } else if (list_name === "neo") {
-    kanji_xml = "data/kanjilist-neo.xml";
-  } else if (list_name === "henshall") {
-    kanji_xml = "data/kanjilist-henshall.xml";
-  } else if (list_name === "kklc") {
-    kanji_xml = "data/kanjilist-kklc.xml";
-  }
+      kanji_xml = {
+        "extra":     "data/kanjilist-extra.xml",
+        "neo":       "data/kanjilist-neo.xml",
+        "henshall":  "data/kanjilist-henshall.xml",
+        "kklc":      "data/kanjilist-kklc.xml",
+      }[list_name] || "data/kanjilist.xml",
+      parts_not_loaded = 5;
 
   // Load data
   function increment_loaded() {
     parts_not_loaded--;
     if (parts_not_loaded === 0) {
+      // Specify ?q=___ to query the character
       var character = gup("q");
       if (character) {
         $("#txtChar").val(character);
@@ -32,20 +26,6 @@ $(function () {
       }
     }
   };
-
-  var shin_kyuu, trad_simp;
-  if (show_chinese) {
-    $.getJSON("data/shin-kyuu.json", function (data) {
-      shin_kyuu = data;
-      increment_loaded();
-    });
-    $.getJSON("data/trad-simp.json", function (data) {
-      trad_simp = data;
-      increment_loaded();
-    });
-  } else {
-    $(".side-char").hide();
-  }
 
   var words = [];
   $.get(vocab_xml, function (data) {
@@ -196,8 +176,8 @@ $(function () {
 
   // Query functions
   var colorCode = function (word) {
-    var s = "90%";
-    var l = "90%";
+    var s = "60%";
+    var l = "85%";
     var h;
     if (word <= "JSL 06 B") {
       h = 0;
@@ -259,12 +239,6 @@ $(function () {
       $(".book-char").hide();
     }
     goToSite();
-    if (show_chinese) {
-      var trad = shin_kyuu[c] || c;
-      var simp = trad_simp[trad] || trad;
-      $("#charTrad").text(trad);
-      $("#charSimp").text(simp);
-    }
   };
   
   $("#formChar").submit(function (event) {
@@ -313,9 +287,7 @@ $(function () {
     if ($("#theChar").text() === BLANK) return;
     var sitename = $("#selSearch").val();
     var target = "";
-    if (use_wayback_machine && sitename === "btnKD") {
-      target = "kanjidamage.html#" + $("#theChar").text();
-    } else if (sitename === "btnKNet") {
+    if (sitename === "btnKNet") {
       target = websites[sitename] + kanjinetwork_mapping[$("#theChar").text()];
     } else if (sitename !== "btnX") {
       target = websites[sitename] + $("#theChar").text();
