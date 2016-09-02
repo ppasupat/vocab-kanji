@@ -16,7 +16,10 @@ Explore Japanese characters (kanji)
 
 # Viewing external resources
 
+To view external references about the chosen character:
 * Choose an external resource from the dropdown box
+  * Since the page is served on HTTPS, while some external web pages use HTTP,
+    mixed content protection has to be disabled to view some resources
 * Clicking on the vocabulary also triggers a search on WWWJDIC
 
 # Alternative character lists
