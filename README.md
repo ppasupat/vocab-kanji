@@ -27,8 +27,9 @@ Explore Japanese characters (kanji)
   * The "cores" are usually, but not always, the phonetic parts
     (e.g., the core of 海 is 毎, and the core of 毎 is 母)
   * The "cores" are further grouped into 14 themes
-    (Nature, Plant, Animal, Posture, Family, Society, Head, Hand, Body, Home, Work, Weapon, Place, Abstract)
+    (Nature, Plant, Animal, Posture, Family, Society, Head, Hand, Body, Home, Work, Weapon, Location, Abstract)
   * This is similar to how [Hanzigong](http://cs.stanford.edu/~ppasupat/hanzigong.html) arranges characters
+  * The list is not finalized yet; some kanji might get rearranged as needed
 * (to be implemented) Add `?list=rtk` to the URL for the list from
   [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi)
   Book 1 (6th ed.) and Book 3
@@ -38,7 +39,7 @@ Explore Japanese characters (kanji)
 Apart from the character lists from official sources, here are the resources used:
 
 * [Japanese: The Spoken Language](https://en.wikipedia.org/wiki/Japanese:_The_Spoken_Language):
-  Upper vocabulary list. The colors correspond to where the word is introduced.
+  Upper vocabulary list. The color corresponds to where the word is introduced.
 * [Jonathan Waller's JLPT Vocab Lists](http://www.tanos.co.uk/jlpt/):
-  Lower vocabulary list. The light gray ones are N3 or below, while the dark gray ones are N2.
+  Lower vocabulary list. The light gray words are N3 or below, while the dark gray words are N2.
   N1 might be added if I pass N2. :)
