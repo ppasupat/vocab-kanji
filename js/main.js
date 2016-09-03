@@ -4,7 +4,6 @@ $(function () {
   var vocab_xml = "data/jsl-vocablist-filtered.xml",
       jlpt_txt = "data/jlpt3-5.html",
       jlpt_2 = "data/jlpt2.html",
-      kanjinetwork_json = "data/kanjinetwork.json",
       list_name = gup("list"),
       kanji_xml = {
         "old":    "data/kanjilist-old.xml",
@@ -12,7 +11,7 @@ $(function () {
         "neo":    "data/kanjilist-neo.xml",
         "kklc":   "data/kanjilist-kklc.xml",
       }[list_name] || "data/kanjilist.xml",
-      parts_not_loaded = 5;
+      parts_not_loaded = 4;
 
   // Load data
   function increment_loaded() {
@@ -285,19 +284,12 @@ $(function () {
     btnGGArt: "http://www.iguci.cn/dictionary/dcontent.php?word=",
     btnYB: "http://www.yellowbridge.com/chinese/character-etymology.php?zi=",
   };
-  var kanjinetwork_mapping;
-  $.getJSON(kanjinetwork_json, function (data) {
-    kanjinetwork_mapping = data;
-    increment_loaded();
-  });
 
   var goToSite = function () {
     if ($("#theChar").text() === BLANK) return;
     var sitename = $("#selSearch").val();
     var target = "";
-    if (sitename === "btnKNet") {
-      target = websites[sitename] + kanjinetwork_mapping[$("#theChar").text()];
-    } else if (sitename !== "btnX") {
+    if (sitename !== "btnX") {
       target = websites[sitename] + $("#theChar").text();
     }
     $("#extFrame").attr('src', target);

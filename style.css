@@ -77,6 +77,7 @@ p {
 #charSel h1 {
   margin: 3px;
   overflow: hidden;
+  text-shadow: 0px -1px 2px #71EA59, 0px 1px 2px #5345E3;
 }
 #formChar {
   display: inline;
