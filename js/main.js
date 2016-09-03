@@ -10,6 +10,7 @@ $(function () {
         "extra":  "data/kanjilist-extra.xml",
         "neo":    "data/kanjilist-neo.xml",
         "kklc":   "data/kanjilist-kklc.xml",
+        "rtk":    "data/kanjilist-rtk.xml",
       }[list_name] || "data/kanjilist.xml",
       parts_not_loaded = 4;
 
@@ -91,6 +92,7 @@ $(function () {
       var bookListElt = $("<div>")
             .addClass("book-list pink-button unselectable")
             .text(bookNode.attr("shortname"))
+            .attr("title", bookNode.attr("name"))
             .appendTo($("#bookList"))
             .click(function () {
               $(".book-list").removeClass("active");

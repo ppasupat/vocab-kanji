@@ -26,6 +26,9 @@ To view external references about the chosen character:
 
 * Add `?list=kklc` to the URL for the list from
   [The Kodansha Kanji Learner's Course](https://www.amazon.com/dp/1568365268)
+* Add `?list=rtk` to the URL for the list from
+  [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi)
+  Book 1 (6th ed.)
 * Add `?list=neo` to the URL for kanji grouped by their "cores"
   * The "cores" are usually, but not always, the phonetic parts
     (e.g., the core of 海 is 毎, and the core of 毎 is 母)
@@ -33,9 +36,6 @@ To view external references about the chosen character:
     (Nature, Plant, Animal, Posture, Family, Society, Head, Hand, Body, Home, Work, Weapon, Location, Abstract)
   * This is similar to how [Hanzigong](http://cs.stanford.edu/~ppasupat/hanzigong.html) arranges characters
   * The list is not finalized yet; some kanji might get rearranged as needed
-* (to be implemented) Add `?list=rtk` to the URL for the list from
-  [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi)
-  Book 1 (6th ed.) and Book 3
 
 # Resources used
 
