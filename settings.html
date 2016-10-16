@@ -33,9 +33,26 @@
   </div>
   <div class="optionGroup">
     <h2>Vocabulary Lists</h2>
+    <ul id="vYesBox" class="vBox yesBox">
+      <li id="v-JSL">JSL<!--Japanese: The Spoken Language--></li>
+      <li id="v-n543">JLPT N5 + N4 + N3</li> 
+      <li id="v-n2">JLPT N2</li>
+    </ul>
+    <ul id="vNoBox" class="vBox noBox">
+      <li id="v-n1">JLPT N1</li>
+      <li id="v-genki">Genki</li>
+      <li id="v-minna">Minna no Nihongo</li>
+      <li id="v-tobira">Tobira</li>
+      <li id="v-int">IAIJ<!--An Integrated Approach to Intermediate Japanese--></li>
+      <li id="v-adv">Authentic Japanese<!--Progressing from Intermediate to Advanced--></li>
+    </ul>
+    <div class="clear"></div>
   </div>
   <div class="optionGroup">
     <h2>Reference List</h2>
+    <p><label for="r-local" id="r-local-label"><input type="checkbox" name="r-local" id="r-local" />
+      Add localhost</label>
+      <span id="rPortSpan">Port: <input type="text" name="r-port" id="r-port"></input></span></p>
   </div>
   <div>
     <button id="applyButton">Apply</button>

@@ -4,14 +4,14 @@ body {
   padding: 0;
   font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
 }
-.clear {
-  clear: both;
-}
 h1, h2 {
   margin: .5em 0 .8em;
 }
 a {
   text-decoration: none;
+}
+.clear {
+  clear: both;
 }
 
 /* JQuery UI */
@@ -40,4 +40,26 @@ a {
 .optionGroup label {
   margin-right: 10px;
   width: 60px;
+}
+#r-local-label {
+  width: auto;
+}
+
+.optionGroup ul {
+  list-style-type: none;  
+  width: 45%;
+  float: left;
+  margin: 0 5px;
+  padding: 5px 0 0 0;
+  border: 1px solid #DDD;
+}
+.optionGroup li {
+  margin: 0 5px 5px 5px;
+  padding: 5px;
+}
+.yesBox {
+}
+.yesBox li {
+  border: 1px solid #dad55e;
+  background-color: #fffa90;
 }
