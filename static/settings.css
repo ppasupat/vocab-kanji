@@ -21,7 +21,7 @@ a {
 
 #wrapper {
   position: relative;
-  max-width: 500px;
+  width: 500px;
   margin: 2em auto;
   padding: 1em 2em;
   border: 1px solid #DDD;
@@ -37,15 +37,17 @@ a {
 .optionGroup p {
   margin: .5em 0;
 }
-.optionGroup label {
+
+#optionGroupK label {
   margin-right: 10px;
   width: 60px;
 }
-#r-local-label {
+#optionGroupR label {
+  margin-right: 10px;
   width: auto;
 }
 
-.optionGroup ul {
+#optionGroupV ul {
   list-style-type: none;  
   width: 45%;
   float: left;
@@ -53,13 +55,19 @@ a {
   padding: 5px 0 0 0;
   border: 1px solid #DDD;
 }
-.optionGroup li {
+#optionGroupV li {
   margin: 0 5px 5px 5px;
   padding: 5px;
+  cursor: move;
 }
 .yesBox {
 }
 .yesBox li {
   border: 1px solid #dad55e;
   background-color: #fffa90;
+}
+.ui-icon-help {
+  cursor: help;
+  background-color: #ccc;
+  border-radius: 40px;
 }

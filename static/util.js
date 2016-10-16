@@ -71,3 +71,27 @@ function stringToCode(str) {
 function firstChar(str) {
   return codeToString(stringToCode(str));
 }
+
+// Settings Save / Load
+var DEFAULT_SETTINGS = {
+  'k': 'grade',
+  'v': ['n543', 'n2'],
+  'r': 8001,
+};
+
+function loadSettings() {
+  var settings = localStorage.getItem('vocab-kanji');
+  if (settings === null) {
+    return DEFAULT_SETTINGS;
+  }
+  return JSON.parse(settings);
+}
+
+function saveSettings(settings) {
+  try {
+    localStorage.setItem('vocab-kanji', JSON.stringify(settings));
+    return true;
+  } catch (e) {
+    return "ERROR: " + e.message;
+  }
+}
