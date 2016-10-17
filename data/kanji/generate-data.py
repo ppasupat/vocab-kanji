@@ -6,20 +6,15 @@ from codecs import open
 from itertools import izip
 from collections import defaultdict, Counter, OrderedDict
 
+# TODO: Make this public
 from kanjitools import get_cats
-
-def create_root():
-    root = OrderedDict()
-    root['books'] = []
-    root['highlights'] = {}
-    return root
 
 def create_book(root, shortname, name):
     book = OrderedDict()
     book['shortname'] = shortname
     book['name'] = name
     book['chapters'] = []
-    root['books'].append(book)
+    root.append(book)
     return book
 
 def create_chapter(book, name, kanji):
@@ -33,7 +28,7 @@ def create_chapter(book, name, kanji):
 # GRADE
 
 def grade_generator(args):
-    root = create_root()
+    root = []
     cats = get_cats()
     # Read onyomi groups
     onyomi_groups = dict([x for x in cats.iteritems() if x[0].startswith('JO')])
@@ -57,9 +52,25 @@ def grade_generator(args):
     return root
 
 ################################
+# NEO
+
+def neo_generator(args):
+    root = []
+    assert args.aux_file, 'Must specify path to grouped file'
+    with open(args.aux_file, 'r', 'utf8') as fin:
+        for line in fin:
+            line = line.strip().split()
+            if line[0] == '#':
+                book = create_book(root, line[1][:2], line[1])
+            else:
+                create_chapter(book, line[0], line[1])
+    return root
+
+################################
 
 GENERATORS = {
         'grade': grade_generator,
+        'neo': neo_generator,
 
         }
 

@@ -54,7 +54,7 @@ $(function () {
 
   var kanjis = {};
   $.get(kanjiFile, function (data) {
-    data.books.forEach(function (book) {
+    data.forEach(function (book) {
       var bookCharElt = $('<div class=book-char>')
             .appendTo('#bookChar').hide();
       var bookListElt = $('<div>')
