@@ -1,5 +1,11 @@
 $(function () {
   "use strict";
+  var settings = loadSettings();
+  console.log(settings);
+
+  $.get('data/kanji/grade.txt', function (data) {
+    console.log(data);
+  });
 
   var vocab_xml = "data/jsl-vocablist-filtered.xml",
       jlpt_txt = "data/jlpt3-5.html",
