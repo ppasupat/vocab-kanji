@@ -1,48 +1,51 @@
 # Vocab-Kanji
-Explore Japanese characters (kanji)
+Explore Japanese characters (kanji) using vocabulary
 
 > <https://ppasupat.github.io/vocab-kanji/>
 
 # Selecting a character
 
+There are 3 ways to select a character:
+
 * Search for a character using the search box
-* Alternatively, browse the characters from the lists
-  * E1 to E6 contain [Kyōiku kanji](https://en.wikipedia.org/wiki/Ky%C5%8Diku_kanji)
-    sorted by onyomi and grouped by school grades
-  * J1 to J6 contain the rest of [Jōyō kanji](https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji)
-    sorted by onyomi and divided into groups of 200
-  * X contains other interesting kanji
-* Alternatively, add `?q=<character>` to the URL
+* Click on a pink category button and browse the characters from the list
+* Add `?q=<character>` to the URL
+
+Words containing the character will be displayed in the middle column.
 
 # Viewing external resources
 
 To view external references about the chosen character:
+
 * Choose an external resource from the dropdown box
   * Since the page is served on HTTPS, while some external web pages use HTTP,
     mixed content protection has to be disabled to view some resources
 * Clicking on the vocabulary also triggers a search on WWWJDIC
 
-# Alternative character lists
+# Settings
 
-* Add `?list=kklc` to the URL for the list from
-  [The Kodansha Kanji Learner's Course](https://www.amazon.com/dp/1568365268)
-* Add `?list=rtk` to the URL for the list from
-  [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi)
-  Book 1 (6th ed.)
-* Add `?list=neo` to the URL for kanji grouped by their "cores"
-  * The "cores" are usually, but not always, the phonetic parts
-    (e.g., the core of 海 is 毎, and the core of 毎 is 母)
-  * The "cores" are further grouped into 14 themes
-    (Nature, Plant, Animal, Posture, Family, Society, Head, Hand, Body, Home, Work, Weapon, Location, Abstract)
-  * This is similar to how [Hanzigong](http://cs.stanford.edu/~ppasupat/hanzigong.html) arranges characters
-  * The list is not finalized yet; some kanji might get rearranged as needed
+Click on the cog button on the lower right of the search box to visit the settings page,
+where the character set, the vocabulary sets, and other cosmetic options can be adjusted.
 
-# Resources used
+(The settings use HTML5 Local Storage, so IE < 8 is not supported.)
 
-Apart from the character lists from official sources, here are the resources used:
+# Notes on character forms
 
-* [Japanese: The Spoken Language](https://en.wikipedia.org/wiki/Japanese:_The_Spoken_Language):
-  Upper vocabulary list. The color corresponds to where the word is introduced.
-* [Jonathan Waller's JLPT Vocab Lists](http://www.tanos.co.uk/jlpt/):
-  Lower vocabulary list. The light gray words are N3 or below, while the dark gray words are N2.
-  N1 might be added if I pass N2. :)
+* A proper font must be used to display Japanese characters correctly.
+  The right-hand side of 海 should be have crossing lines instead of two dots,
+  while the bottom of 直 should be an L instead of a horizontal line.
+* For characters with variants in different Unicode code points:
+  * Jouyou kanji added before 2010: shinjitai is used
+  * Jouyou kanji added in 2010: for compatibility, the JIS X 0208 form is used
+    for the following 4 characters: 剥 叱 填 頬.
+    Otherwise, the official forms are used (e.g., 籠 instead of the ryakuji 篭).
+  * Jinmeiyou and Hyougai kanji: if both variants are in the same table,
+    the one resembling shinjitai is used (e.g., 遥 instead of 遙, and 醤 instead of 醬).
+    Otherwise, the one in the higher-ranked table is used
+    (e.g., 轟 instead of 軣).
+* For characters with variants unified in the same Unicode code point:
+  * Depending on the font, the character forms may differ
+    (e.g., 謎 may show 辶 with either one or two dots).
+  * Keep in mind that the handwritten form can be different from the printed form
+    (e.g., the last two stroke of 令 is usually written as マ rather than 𠃌+丨,
+    or the dots on the right-hand side 絆 is commonly written as ソ instead of ハ).
