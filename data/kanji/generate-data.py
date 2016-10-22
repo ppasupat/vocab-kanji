@@ -67,11 +67,48 @@ def neo_generator(args):
     return root
 
 ################################
+# RTK
+
+def rtk_generator(args):
+    root = []
+    cats = get_cats()
+    for name, (m, n) in [
+            ('Stories', (1, 10)), ('Plots', (11, 19)), ('Elements', (20, 56))]:
+        book_id = 1
+        total_chars = 99999
+        for i in xrange(m, n + 1):
+            chars = cats['R' + str(i)]
+            if total_chars + len(chars) > {'S': 100, 'P': 125, 'E': 150}[name[0]]:
+                book = create_book(root,
+                        '{}{}'.format(name[0], book_id),
+                        '{} {}'.format(name, book_id))
+                total_chars = 0
+                book_id += 1
+            total_chars += len(chars)
+            create_chapter(book, str(i), chars)
+    return root
+
+################################
+# KKLC
+
+def kklc_generator(args):
+    root = []
+    cats = get_cats()
+    kklc = cats['KKLC']
+    assert len(kklc) == 2300
+    for i in xrange(23):
+        book = create_book(root, str(i), '{}-{}'.format(i * 100 + 1, (i+1) * 100))
+        for j in xrange(0, 100, 20):
+            create_chapter(book, str(i * 100 + j + 1), kklc[i * 100 + j: i * 100 + j + 20])
+    return root
+    
+################################
 
 GENERATORS = {
         'grade': grade_generator,
         'neo': neo_generator,
-
+        'rtk': rtk_generator,
+        'kklc': kklc_generator,
         }
 
 def main():
