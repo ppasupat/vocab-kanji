@@ -112,7 +112,7 @@ $(function () {
       if (result.length) {
         $('#wordList').append($('<h3>').text(group.title));
         result.forEach(function (word) {
-          $('#wordList').append(getAnchor(word).addClass('w' + (i % 6)));
+          $('#wordList').append(getAnchor(word).addClass('w' + (i % 7)));
         });
         $('#wordList').append($('<div class=clear>'));
       }

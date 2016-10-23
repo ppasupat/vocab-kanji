@@ -199,12 +199,13 @@ p {
   color: #111;
   text-decoration: none;
 }
-#wordList a.w0 { background-color: #F6CCCC; }
-#wordList a.w1 { background-color: #F6F6CC; }
-#wordList a.w2 { background-color: #CCF6CC; }
-#wordList a.w3 { background-color: #CCF6F6; }
-#wordList a.w4 { background-color: #CCCCF6; }
-#wordList a.w5 { background-color: #F6CCF6; }
+#wordList a.w0 { background-color: #F4CCCC; }
+#wordList a.w1 { background-color: #FCE5CD; }
+#wordList a.w2 { background-color: #FFF2CC; }
+#wordList a.w3 { background-color: #D9EAD3; }
+#wordList a.w4 { background-color: #CFE2F3; }
+#wordList a.w5 { background-color: #D2D2E9; }
+#wordList a.w6 { background-color: #EAD1DC; }
 #clearList {
   height: 15px;
 }
