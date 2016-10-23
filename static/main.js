@@ -3,14 +3,10 @@ $(function () {
   var settings = loadSettings();
   console.log(settings);
 
-  var kanjiFile = 'data/kanji/' + settings.k + '.json';
-
-  var vocab_xml = 'data/jsl-vocablist-filtered.xml',
-      jlpt_txt = 'data/jlpt3-5.html',
-      jlpt_2 = 'data/jlpt2.html',
-      kago_json = 'data/kago.json',
-      xiuwenyuan_json = 'data/xiuwenyuan.json',
-      parts_not_loaded = 6;
+  var kanjiFile = 'data/kanji/' + settings.k + '.json',
+      kago_json = 'data/reference/kago.json',
+      xiuwenyuan_json = 'data/reference/xiuwenyuan.json',
+      parts_not_loaded = 3 + settings.v.length;
 
   // Load data
   function increment_loaded() {
@@ -25,32 +21,8 @@ $(function () {
     }
   };
 
-  var words = [];
-  $.get(vocab_xml, function (data) {
-    $(data).find('chapter').each(function (index, elt) {
-      var chapter_name = $(elt).attr('name');
-      $(elt).text().split('\n').forEach(function (word) {
-        if (word) {
-          words.push([word, chapter_name]);
-        }
-      });
-    });
-    increment_loaded();
-  });
-
-  var jlptWords = [], jlpt2Words = [];
-  $.get(jlpt_txt, function (data) {
-    data.split('\n').forEach(function (word) {
-      jlptWords.push(word);
-    });
-    increment_loaded();
-  });
-  $.get(jlpt_2, function (data) {
-    data.split('\n').forEach(function (word) {
-      jlpt2Words.push(word);
-    });
-    increment_loaded();
-  });
+  // ################################
+  // Kanji
 
   var kanjis = {};
   $.get(kanjiFile, function (data) {
@@ -89,46 +61,39 @@ $(function () {
     increment_loaded();
   });
 
-  /////////
+  // ################################
+  // Vocab
+  // Each item is {name: ___, words: ___}
+
+  var vocab_groups = [];
+  settings.v.forEach(function (name, i) {
+    var group = {'name': name};
+    vocab_groups.push(group);
+    $.get('data/vocab/' + name + '.txt', function (data) {
+      group.words = data.split('\n');
+      group.title = group.words[0].slice(2);
+      group.words[0] = '';
+      increment_loaded();
+    });
+  });
+
+  // ################################
+  // Kanji selection
 
   $('#bookChar').on('click', '.chr', function () {
     $('#txtChar').val($(this).text());
     $('#formChar').submit();
   });
 
-  // Query functions
-  var colorCode = function (word) {
-    var s = '60%';
-    var l = '85%';
-    var h;
-    if (word <= 'JSL 06 B') {
-      h = 0;
-    } else if (word <= 'JSL 12 B') {
-      h = 60;
-    } else if (word <= 'JSL 17 B') {
-      h = 120;
-    } else if (word <= 'JSL 22 B') {
-      h = 180;
-    } else if (word <= 'JSL 27 B') {
-      h = 240;
-    } else if (word <= 'JSL 30 B') {
-      h = 300;
-    } else {
-      h = 360;
-    }
-    return 'hsl(' + h + ',' + s + ',' + l + ')';
-  };
-
   var BLANK = '\u3000';
-
   var wwwjdicUrl = 'http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ';
-  var getAnchor = function (text) {
+  function getAnchor(text) {
     return $('<a>').text(text)
       .attr('href', wwwjdicUrl + text)
       .attr('target', 'extFrame');
   }
 
-  var query = function () {
+  function query() {
     var c = firstChar($('#txtChar').val());
     // Clear the display
     $('#wordList, #jlptList').empty();
@@ -138,26 +103,22 @@ $(function () {
       return;
     }
     $('#theChar').text(c);
+    // Find vocab
     var pattern = new RegExp(c);
-    $.grep(words, function (tuple, index) {
-      return pattern.test(tuple[0]);
-    }).forEach(function (tuple) {
-      $('#wordList').append(getAnchor(tuple[0])
-                            .css('background-color', 
-                                 colorCode(tuple[1])));
-    });
-    $.grep(jlptWords, function (word, index) {
-      return pattern.test(word);
-    }).forEach(function (word) {
-      $('#jlptList').append(getAnchor(word));
-    });
-    $.grep(jlpt2Words, function (word, index) {
-      return pattern.test(word);
-    }).forEach(function (word) {
-      $('#jlptList').append(getAnchor(word).addClass('n2'));
+    vocab_groups.forEach(function (group) {
+      var result = $.grep(group.words, function (word, index) {
+        return pattern.test(word);
+      });
+      if (result.length) {
+        $('#wordList').append($('<h3>').text(group.title));
+        result.forEach(function (word) {
+          $('#wordList').append(getAnchor(word).addClass(group.name));
+        });
+        $('#wordList').append($('<div class=clear>'));
+      }
     });
     $('#charDesc').show();
-    
+    // Change highlight 
     var toHighlight = kanjis[c];
     $('.chr').removeClass('highlight');
     if (toHighlight) {
@@ -167,6 +128,7 @@ $(function () {
       $('.book-list').removeClass('active');
       $('.book-char').hide();
     }
+    // Open reference
     goToSite();
   };
   
@@ -187,6 +149,9 @@ $(function () {
     $('#txtChar').width('1.5em');
     $('#selSearch').show();
   });
+
+  // ################################
+  // Reference
 
   // Search functions
   var websites = {
@@ -243,6 +208,9 @@ $(function () {
     $('#extFrame').attr('src', target);
   };
   $('#selSearch').change(goToSite);
+
+  // ################################
+  // Other stuff
 
   // Layout functions
   var resizer = function () {

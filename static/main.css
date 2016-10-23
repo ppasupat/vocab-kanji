@@ -184,7 +184,10 @@ p {
   clear: both;
   padding-top: 10px;
 }
-#wordList a, #jlptList a {
+#wordList h3 {
+  margin: 0.5em;
+}
+#wordList a {
   display: block;
   float: left;
   font-size: 20pt;
@@ -196,9 +199,6 @@ p {
   background-color: #E5E5E5;
   color: #111;
   text-decoration: none;
-}
-#jlptList a.n2 {
-  background-color: #BBC;
 }
 #clearList {
   height: 15px;

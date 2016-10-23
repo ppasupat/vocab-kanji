@@ -75,7 +75,7 @@ function firstChar(str) {
 // Settings Save / Load
 var DEFAULT_SETTINGS = {
   'k': 'grade',
-  'v': ['n543', 'n2'],
+  'v': ['n5', 'n4', 'n3', 'n2'],
   'r': 8001,
 };
 
