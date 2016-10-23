@@ -196,10 +196,15 @@ p {
   padding: 3px 6px;
   border-radius: 5px;
   box-shadow: 1px 1px 5px -1px #AAA;
-  background-color: #E5E5E5;
   color: #111;
   text-decoration: none;
 }
+#wordList a.w0 { background-color: #F6CCCC; }
+#wordList a.w1 { background-color: #F6F6CC; }
+#wordList a.w2 { background-color: #CCF6CC; }
+#wordList a.w3 { background-color: #CCF6F6; }
+#wordList a.w4 { background-color: #CCCCF6; }
+#wordList a.w5 { background-color: #F6CCF6; }
 #clearList {
   height: 15px;
 }

@@ -105,14 +105,14 @@ $(function () {
     $('#theChar').text(c);
     // Find vocab
     var pattern = new RegExp(c);
-    vocab_groups.forEach(function (group) {
-      var result = $.grep(group.words, function (word, index) {
+    vocab_groups.forEach(function (group, i) {
+      var result = $.grep(group.words, function (word) {
         return pattern.test(word);
       });
       if (result.length) {
         $('#wordList').append($('<h3>').text(group.title));
         result.forEach(function (word) {
-          $('#wordList').append(getAnchor(word).addClass(group.name));
+          $('#wordList').append(getAnchor(word).addClass('w' + (i % 6)));
         });
         $('#wordList').append($('<div class=clear>'));
       }
@@ -170,6 +170,7 @@ $(function () {
     btnZDic: 'http://www.zdic.net/sousuo?q=',
     btnGGArt: 'http://www.iguci.cn/dictionary/dcontent.php?word=',
     btnXiu: 'http://www.xiuwenyuan.com/ziyuan/',
+    btnLocalhost: 'http://localhost:' + settings.r + '/?q=',
   };
 
   var kagoMap = {}, xiuwenyuanMap;
@@ -185,6 +186,9 @@ $(function () {
     xiuwenyuanMap = data;
     increment_loaded();
   });
+  if (!settings.r) {
+    $('.localhost').hide();
+  }
 
   var goToSite = function () {
     if ($('#theChar').text() === BLANK) return;
