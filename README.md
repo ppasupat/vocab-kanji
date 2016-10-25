@@ -49,28 +49,32 @@ Click on the cog button on the lower right of the search box to visit the settin
 * **KKLC**: Andrew Scott Conning's [The Kodansha Kanji Learner's Course](https://www.amazon.com/dp/1568365268),
   grouped into chunks of 200 characters.
 
-Please suggest other lists in Github issues.
+Please suggest other lists or submit take-down notices in Github issues.
 
 ## Vocabulary Lists
 
 * **JLPT**: Vocabulary lists from [Jonathan Waller's website](http://www.tanos.co.uk/jlpt/).
-  These are not official JLPT vocabulary lists as they do not exist.
-  Parenthesized entries are words introduced in kana form in the current level
-  but in kanji in a higher level.
-* **JSL**: Jorden and Noda's [Japanese: The Spoken Language](http://www.tanos.co.uk/jlpt/)
+* **JSL**: [Japanese: The Spoken Language](http://www.tanos.co.uk/jlpt/)
   published by Yale Language Press.
   These are the textbooks I used at MIT (right before they switched to Genki
   and Tobira). (Beginner to Intermediate)
+* **Genki**: [Genki](http://genki.japantimes.co.jp/index_en) series.
+  (Beginner)
+* **Minna no Nihongo I-II**: [Minna no Nihongo](http://www.3anet.co.jp/english/books/books_01.html)
+  volumes I and II (Beginner)
+  ([Source](http://kyoan.u-biq.org/tangosearch.html))
 
 To be added:
 
-* **Genki**: [Genki](http://genki.japantimes.co.jp/index_en) series.
-  (Beginner)
-* **Minna no Nihongo I-II**: Minna no Nihongo volumes I and II (Beginner)
-* **Minna no Nihongo III-IV**: Minna no Nihongo volumns III and IV (Intermediate)
+* **Minna no Nihongo III-IV**: [Minna no Nihongo](http://www.3anet.co.jp/english/books/books_01.html)
+  volumns III and IV (Intermediate)
 * **Tobira**: [Tobira: Gateway to Advanced Japanese](http://tobiraweb.9640.jp/) (Intermediate)
-* **IAIJ**: An Integrated Approach to Intermediate Japanese
-* **Authentic Japanese**: Authentic Japanese: Progressing from Intermediate to Advanced
+* **IAIJ**: An Integrated Approach to Intermediate Japanese (Intermediate)
+* **Authentic Japanese**: Authentic Japanese: Progressing from Intermediate to Advanced (Advanced)
+* **Kanji in Context**: [Kanji in Context](https://www.amazon.com/dp/4789007537) (Intermediate to Advanced)
+  ([Source](http://www.denisowski.org/Japanese/KIC/KIC.html))
+
+Please suggest other lists or submit take-down notices in Github issues.
 
 ## References
 
