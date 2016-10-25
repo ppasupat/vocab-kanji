@@ -14,7 +14,7 @@ $(function () {
   $('.vBox li').addClass('ui-state-default');
 
   function togglePort () {
-    $('#rPortSpan').toggle($('#r-local').is(":checked"));
+    $('#rPortSpan, #localhostExplain').toggle($('#r-local').is(":checked"));
   }
   $('#r-local').change(togglePort);
 

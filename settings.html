@@ -15,13 +15,14 @@
 
 <div id="wrapper">
   <h1>Settings</h1>
+  <p>Refer to the project's <a href="https://github.com/ppasupat/vocab-kanji/blob/master/README.md" target="_blank">README file</a> for more details.</p>
   <div class="optionGroup" id="optionGroupK">
     <h2>Kanji List</h2>
     <p>
       <label for="k-grade">
         <input type="radio" name="k" id="k-grade" checked /> GRADE
       </label>
-      School grades (<a href="http://www.kanken.or.jp/kanken/outline/data/outline_degree_national_list.pdf">Kanji Kentei</a> levels)
+      Jouyou kanji by kyouiku grades + <a href="http://www.kanken.or.jp/kanken/outline/data/outline_degree_national_list.pdf">Kanji Kentei</a> levels
     </p>
     <p>
       <label for="k-neo">
@@ -34,7 +35,7 @@
         <input type="radio" name="k" id="k-rtk" /> RTK
       </label>
       <a href="https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi" target="_blank">
-        Remembering the Kanji (6th ed.)
+        Remembering the Kanji (Book 1, 6th ed.)
       </a>
     </p>
     <p>
@@ -48,40 +49,47 @@
   </div>
   <div class="optionGroup" id="optionGroupV">
     <h2>Vocabulary Lists</h2>
-    <ul id="vYesBox" class="vBox yesBox">
-    </ul>
-    <ul id="vNoBox" class="vBox noBox">
-      <li id="v-n5">JLPT N5
-        <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
-      </li>
-      <li id="v-n4">JLPT N4
-        <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
-      </li>
-      <li id="v-n3">JLPT N3
-        <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
-      </li>
-      <li id="v-n2">JLPT N2
-        <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
-      </li>
-      <li id="v-n1">JLPT N1
-        <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
-      </li>
-      <!--<li id="v-genki">Genki</li>-->
-      <!--<li id="v-minna">Minna no Nihongo</li>-->
-      <li id="v-jsl">JSL
-        <span class="ui-icon ui-icon-help" title="Japanese: The Spoken Language (3 volumes)"></span>
-      </li>
-      <!--
-      <li id="v-tobira">Tobira
-        <span class="ui-icon ui-icon-help" title="Tobira: Gateway to Advanced Japanese / 上級へのとびら"></span>
-      </li>
-      <li id="v-int">IAIJ
-        <span class="ui-icon ui-icon-help" title="An Integrated Approach to Intermediate Japanese"></span></li>
-      <li id="v-adv">Authentic Japanese
-        <span class="ui-icon ui-icon-help" title="Authentic Japanese: Progressing from Intermediate to Advanced"></span>
-      </li>
-      -->
-    </ul>
+    <div class="vBoxWrapper">
+      <h3>Used</h3>
+      <ul id="vYesBox" class="vBox yesBox">
+      </ul>
+    </div>
+    <div class="vBoxWrapper">
+      <h3>Unused</h3>
+      <ul id="vNoBox" class="vBox noBox">
+        <li id="v-n5">JLPT N5
+          <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
+        </li>
+        <li id="v-n4">JLPT N4
+          <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
+        </li>
+        <li id="v-n3">JLPT N3
+          <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
+        </li>
+        <li id="v-n2">JLPT N2
+          <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
+        </li>
+        <li id="v-n1">JLPT N1
+          <span class="ui-icon ui-icon-help" title="from Jonathan Waller's website"></span>
+        </li>
+        <li id="v-genki">Genki</li>
+        <li id="v-minna-s">Minna no Nihongo I-II</li>
+        <li id="v-minna-c">Minna no Nihongo III-IV</li>
+        <li id="v-jsl">JSL
+          <span class="ui-icon ui-icon-help" title="Japanese: The Spoken Language (3 volumes)"></span>
+        </li>
+        <!--
+        <li id="v-tobira">Tobira
+          <span class="ui-icon ui-icon-help" title="Tobira: Gateway to Advanced Japanese / 上級へのとびら"></span>
+        </li>
+        <li id="v-int">IAIJ
+          <span class="ui-icon ui-icon-help" title="An Integrated Approach to Intermediate Japanese"></span></li>
+        <li id="v-adv">Authentic Japanese
+          <span class="ui-icon ui-icon-help" title="Authentic Japanese: Progressing from Intermediate to Advanced"></span>
+        </li>
+        -->
+      </ul>
+    </div>
     <div class="clear"></div>
   </div>
   <div class="optionGroup" id="optionGroupR">
@@ -89,6 +97,7 @@
     <p><label for="r-local" id="r-local-label"><input type="checkbox" name="r-local" id="r-local" />
       Add localhost</label>
       <span id="rPortSpan">Port: <input type="text" name="r-port" id="r-port" /></span></p>
+    <p id="localhostExplain">The reference "localhost" will open&nbsp; <tt>http://localhost:[port]/?q=[char]</tt></p>
   </div>
   <div>
     <button id="applyButton"><strong>Apply</strong></button>

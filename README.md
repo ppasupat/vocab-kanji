@@ -1,5 +1,5 @@
 # Vocab-Kanji
-Explore Japanese characters (kanji) using vocabulary
+Explore Japanese characters (kanji) and their vocabulary
 
 > <https://ppasupat.github.io/vocab-kanji/>
 
@@ -7,27 +7,76 @@ Explore Japanese characters (kanji) using vocabulary
 
 There are 3 ways to select a character:
 
-* Search for a character using the search box
-* Click on a pink category button and browse the characters from the list
+* Search for a character using the search box, or ...
+* Click on a category button in the first column and browse the characters from the list, or ...
 * Add `?q=<character>` to the URL
 
 Words containing the character will be displayed in the middle column.
 
-# Viewing external resources
+# Viewing external references
 
-To view external references about the chosen character:
+To view external references on the chosen character:
 
 * Choose an external resource from the dropdown box
   * Since the page is served on HTTPS, while some external web pages use HTTP,
     mixed content protection has to be disabled to view some resources
 * Clicking on the vocabulary also triggers a search on WWWJDIC
 
+The web page will be shown in the right column.
+
 # Settings
 
-Click on the cog button on the lower right of the search box to visit the settings page,
-where the character set, the vocabulary sets, and other cosmetic options can be adjusted.
+Click on the cog button on the lower right of the search box to visit the settings page.
 
 (The settings use HTML5 Local Storage, so IE < 8 is not supported.)
+
+## Kanji List
+
+* **GRADE**: [Kyouiku kanji](https://en.wikipedia.org/wiki/Ky%C5%8Diku_kanji)
+  are grouped by school grades,
+  while [Jouyou kanji](https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji)
+  (as revised in 2010) are grouped based on the 
+  [Kanji Kentei](http://www.kanken.or.jp/kanken/outline/data/outline_degree_national_list.pdf) levels.
+  Characters are further sorted and grouped by representative readings
+  (usually onyomi).
+* **NEO**: Ice's Hanzigong-style kanji grouping.
+  Characters are grouped based on the visual "core" part
+  (usually the phonetic component, but not always),
+  and the cores are grouped based on themes
+  (e.g., Nature includes 日, 月, 夕, 土, 山, ...).
+  The characters include Jouyou kanji and a number of other common characters.
+* **RTK**: James Heisig's [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi), Book 1, 6th edition.
+* **KKLC**: Andrew Scott Conning's [The Kodansha Kanji Learner's Course](https://www.amazon.com/dp/1568365268),
+  grouped into chunks of 200 characters.
+
+Please suggest other lists in Github issues.
+
+## Vocabulary Lists
+
+* **JLPT**: Vocabulary lists from [Jonathan Waller's website](http://www.tanos.co.uk/jlpt/).
+  These are not official JLPT vocabulary lists as they do not exist.
+  Parenthesized entries are words introduced in kana form in the current level
+  but in kanji in a higher level.
+* **JSL**: Jorden and Noda's [Japanese: The Spoken Language](http://www.tanos.co.uk/jlpt/)
+  published by Yale Language Press.
+  These are the textbooks I used at MIT (right before they switched to Genki
+  and Tobira). (Beginner to Intermediate)
+
+To be added:
+
+* **Genki**: [Genki](http://genki.japantimes.co.jp/index_en) series.
+  (Beginner)
+* **Minna no Nihongo I-II**: Minna no Nihongo volumes I and II (Beginner)
+* **Minna no Nihongo III-IV**: Minna no Nihongo volumns III and IV (Intermediate)
+* **Tobira**: [Tobira: Gateway to Advanced Japanese](http://tobiraweb.9640.jp/) (Intermediate)
+* **IAIJ**: An Integrated Approach to Intermediate Japanese
+* **Authentic Japanese**: Authentic Japanese: Progressing from Intermediate to Advanced
+
+## References
+
+* **Add localhost**: Add a "localhost" reference which opens the URL
+  `http://localhost:[port]/?q=[char]` in the right column.
+  Can be used to open local references (local database, scanned references, etc.)
 
 # Notes on character forms
 
@@ -35,14 +84,10 @@ where the character set, the vocabulary sets, and other cosmetic options can be 
   The right-hand side of 海 should be have crossing lines instead of two dots,
   while the bottom of 直 should be an L instead of a horizontal line.
 * For characters with variants in different Unicode code points:
-  * Jouyou kanji added before 2010: shinjitai is used
-  * Jouyou kanji added in 2010: for compatibility, the JIS X 0208 form is used
-    for the following 4 characters: 剥 叱 填 頬.
-    Otherwise, the official forms are used (e.g., 籠 instead of the ryakuji 篭).
-  * Jinmeiyou and Hyougai kanji: if both variants are in the same table,
-    the one resembling shinjitai is used (e.g., 遥 instead of 遙, and 醤 instead of 醬).
-    Otherwise, the one in the higher-ranked table is used
-    (e.g., 轟 instead of 軣).
+  * JIS level 1 is preferred, followed by level 2 and so on.
+  * This means some characters will get a popular but hyougai shinjitai variant.
+    For example, hyougai 醤 (as in shouyu) is preferred to jinmeiyou 醬,
+    and hyougai 頬 is preferred to jouyou 頰.
 * For characters with variants unified in the same Unicode code point:
   * Depending on the font, the character forms may differ
     (e.g., 謎 may show 辶 with either one or two dots).
