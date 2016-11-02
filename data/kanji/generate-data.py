@@ -57,6 +57,7 @@ def grade_generator(args):
 def neo_generator(args):
     root = []
     assert args.aux_file, 'Must specify path to grouped file'
+    count = 0
     with open(args.aux_file, 'r', 'utf8') as fin:
         for line in fin:
             line = line.strip().split()
@@ -64,6 +65,8 @@ def neo_generator(args):
                 book = create_book(root, line[1][:2], line[1])
             else:
                 create_chapter(book, line[0], line[1])
+                count += sum(x != '|' for x in line[1])
+    print >> sys.stderr, 'Read {} characters'.format(count)
     return root
 
 ################################
