@@ -63,12 +63,12 @@ Please suggest other lists or submit take-down notices in Github issues.
 * **Minna no Nihongo I-II**: [Minna no Nihongo](http://www.3anet.co.jp/english/books/books_01.html)
   volumes I and II (Beginner)
   ([Source](http://kyoan.u-biq.org/tangosearch.html))
+* **Tobira**: [Tobira: Gateway to Advanced Japanese](http://tobiraweb.9640.jp/) (Intermediate)
 
 To be added:
 
 * **Minna no Nihongo III-IV**: [Minna no Nihongo](http://www.3anet.co.jp/english/books/books_01.html)
   volumns III and IV (Intermediate)
-* **Tobira**: [Tobira: Gateway to Advanced Japanese](http://tobiraweb.9640.jp/) (Intermediate)
 * **IAIJ**: An Integrated Approach to Intermediate Japanese (Intermediate)
 * **Authentic Japanese**: Authentic Japanese: Progressing from Intermediate to Advanced (Advanced)
 * **Kanji in Context**: [Kanji in Context](https://www.amazon.com/dp/4789007537) (Intermediate to Advanced)
