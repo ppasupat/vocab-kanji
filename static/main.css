@@ -41,54 +41,67 @@ p {
 }
 
 /* Outer Structures */
-#charSel, #charDisp, #extWeb, #charEdit {
+#mainPane, #extPane {
   position: fixed;
   height: 100%;
 }
-#charSel {
+#mainPane {
   left: 0;
-  width: 25%;
-  border-right: 1px solid #DDD;
+  width: 50%;
 }
-#charDisp {
-  left: 25%;
-  width: 25%;
-  z-index: 99;
-}
-#extWeb {
+#extPane {
   left: 50%;
   width: 50%;
   border: 0;
   border-left: 1px solid #DDD;
+}
+@media (max-width: 990px) {
+  #mainPane { width: 100%; }
+  #extPane { display: none; }
 }
 
 /* charSelUpper */
 #charSelUpper, #charSelLower {
   padding: 10px;
   position: relative;
+  height: 30px;
 }
 #charSelUpper {
   background-color: #EEE;
   border-bottom: 1px solid #DDD;
 }
-#charSelUpper div {
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-#charSel h1 {
+#charSelUpper > h1 {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 24px;
   margin: 3px;
   text-shadow: 0px -1px 2px #71EA59, 0px 1px 2px #5345E3;
+}
+#charSelUpper > div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1px 6px;
 }
 #formChar {
   display: inline;
 }
 #txtChar {
   width: 1.5em;
-  font-size: 18pt;
+  font-size: 16pt;
   text-align: center;
+  height: 26px;
+  padding: 1px;
+  border: 1px solid #BBB;
+  border-radius: 5px;
 }
 #selSearch {
-  vertical-align: text-bottom;
+  display: inline-block;
+  height: 30px;
+  vertical-align: top;
+  background-color: white;
+  padding: 3px;
+  border: 1px solid #BBB;
+  border-radius: 5px;
 }
 
 /* charSelLower */
@@ -151,7 +164,7 @@ p {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background: url('images/cog.png') no-repeat left top;
+  background: url('cog.png') no-repeat left top;
 }
 #settingsLink:hover {
   background-position: -16px 0px

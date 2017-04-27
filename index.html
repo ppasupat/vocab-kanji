@@ -6,15 +6,15 @@
   <title>Vocab-Kanji</title>
   <link rel="stylesheet" type="text/css" href="static/main.css" />
   <link rel="icon" type="image/png" href="static/icon.png" />
-  <script type="text/javascript" src="static/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="static/util.js"></script>
   <script type="text/javascript" src="static/main.js"></script>
 </head>
 
 <body>
 
-<div id="charSel">
-  <div id="charSelUpper" class="centerize">
+<div id="mainPane">
+  <div id="charSelUpper">
     <h1>Vocab-Kanji</h1>
     <div>
       <form id="formChar">
@@ -22,7 +22,7 @@
       </form>
       <select id="selSearch">
         <option value="btnX" selected="selected">None</option>
-        <option disabled>──────────</option>
+        <option disabled>────────</option>
         <option value="btnWWWJDIC">WWWJDIC</option>
         <option value="btnKDamage">KanjiDamage</option>
         <option value="btnKotobank">Kotobank</option>
@@ -30,14 +30,14 @@
         <option value="btnWikiJ">Wiktionary JA</option>
         <option value="btnYamasa">Yamasa</option>
         <option value="btnNico">NicoNicoPedia</option>
-        <option disabled>──────────</option>
+        <option disabled>────────</option>
         <option value="btnCEty">C Etymology</option>
         <option value="btnCChr">C Character</option>
         <option value="btnZDic">ZDic</option>
         <option value="btnGGArt">GG-Art</option>
         <option value="btnKago">Kanji Family</option>
         <option value="btnChise">Chise</option>
-        <option class="localhost" disabled>──────────</option>
+        <option class="localhost" disabled>────────</option>
         <option class="localhost" value="btnLocalhost">localhost</option>
       </select>
     </div>
@@ -48,8 +48,6 @@
     <div class="clear"></div>
     <div id="bookChar"></div>
   </div>
-</div>
-<div id="charDisp">
   <div id="charDispInner">
     <div class="big-char" id="theChar">&#12288;</div>
   </div>
@@ -58,8 +56,9 @@
     <div id="clearList" class="clear"></div>
   </div>
 </div>
-<div id="extWeb">
+<div id="extPane">
   <iframe id="extFrame" name="extFrame" src=""></iframe>
 </div>
+
 </body>
 </html>
