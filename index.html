@@ -15,7 +15,7 @@
 
 <div id="mainPane">
   <div id="charSelUpper">
-    <h1>Vocab-Kanji</h1>
+    <h1><span id="fullName">Vocab-Kanji</span><span id="abbrevName">VK</span></h1>
     <div>
       <form id="formChar">
         <input type="text" id="txtChar"/>
@@ -44,10 +44,14 @@
     <a href="settings.html" id="settingsLink" title="Settings"></a>
   </div>
   <div id="charSelLower">
-    <div id="bookList"></div>
-    <div class="clear"></div>
-    <div id="bookChar"></div>
+    <div id="currentBookBox">Nature</div>
+    <div id="currentChapterBox">日</div>
+    <div id="currentCharBox">日 昌 唱</div>
+    <div id="selectorBox"></div>
   </div>
+  <div id="bookList"></div>
+  <div class="clear"></div>
+  <div id="bookChar"></div>
   <div id="charDispInner">
     <div class="big-char" id="theChar">&#12288;</div>
   </div>

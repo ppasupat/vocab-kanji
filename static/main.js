@@ -216,18 +216,6 @@ $(function () {
   // ################################
   // Other stuff
 
-  // Layout functions
-  var resizer = function () {
-    var sel_height = ($(window).height() - 20
-                      - $('#charSelUpper').outerHeight(true));
-    $('#charSelLower').height(sel_height);
-    var desc_height = ($(window).height() - 20
-                       - $('#charDispInner').outerHeight(true));
-    $('#charDesc').height(desc_height);
-  };
-  $(window).resize(resizer);
-  resizer();
-
   // Reset fields
   $('#txtChar').val('');
   $('#selSearch').val('btnX');

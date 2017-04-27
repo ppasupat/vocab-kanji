@@ -68,7 +68,6 @@ p {
 }
 #charSelUpper {
   background-color: #EEE;
-  border-bottom: 1px solid #DDD;
 }
 #charSelUpper > h1 {
   display: inline-block;
@@ -77,6 +76,12 @@ p {
   margin: 3px;
   text-shadow: 0px -1px 2px #71EA59, 0px 1px 2px #5345E3;
 }
+#abbrevName { display: none; }
+@media (max-width: 500px) {
+  #fullName { display: none; }
+  #abbrevName { display: inline; }
+}
+
 #charSelUpper > div {
   display: inline-block;
   vertical-align: top;
@@ -105,10 +110,38 @@ p {
 }
 
 /* charSelLower */
-#charSelLower {
-  overflow: auto;
-  font-size: 18pt;
+#currentBookBox, #currentChapterBox, #currentCharBox {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 28px;
+  text-align: center;
 }
+#currentBookBox {
+  left: 0;
+  width: 25%;
+  background-color: #C5C5CC;
+}
+#currentChapterBox {
+  left: 25%;
+  width: 25%;
+  background-color: #D2D2D9;
+}
+#currentCharBox {
+  left: 50%;
+  width: 50%;
+  background-color: #DDDDE5;
+}
+#selectorBox {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  left: 0;
+  background-color: blue;
+}
+
+
 #bookList {
   padding: 0;
 }
