@@ -24,41 +24,118 @@ $(function () {
   // ################################
   // Kanji
 
+  var kanjiData, chosenBook = -1, chosenChapter = -1;
   var kanjis = {};
   $.get(kanjiFile, function (data) {
-    data.forEach(function (book) {
-      var bookCharElt = $('<div class=book-char>')
-            .appendTo('#bookChar').hide();
-      var bookListElt = $('<div>')
-            .addClass('book-list pink-button unselectable')
-            .text(book.shortname).attr('title', book.name)
-            .appendTo('#bookList')
-            .click(function () {
-              $('.book-list').removeClass('active');
-              $('.book-char').hide();
-              bookListElt.addClass('active');
-              bookCharElt.show();
-            });
-      book.chapters.forEach(function (chapter) {
-        var chapterElt = $('<p>').appendTo(bookCharElt)
-          .append($('<span class=title>').text(chapter.name));
-        chapter.kanji.split('').forEach(function (chr) {
-          if (chr === '|') {
-            chapterElt.append(' | ');
-          } else if (chr === '(' || chr === ')') {
-            chapterElt.append(chr);
-          } else if (chr !== ' ') {
-            var charSpan = $('<span class=chr>').text(chr);
-            chapterElt.append(' ').append(charSpan);
+    kanjiData = data;
+    data.forEach(function (book, i) {
+      book.chapters.forEach(function (chapter, j) {
+        chapter.kanji.split('').forEach(function (chr, k) {
+          if (chr !== '|' && chr !== '(' && chr !== ')') {
             if (kanjis[chr] !== undefined) {
               console.log('Warning! Repeated character: ' + chr);
             }
-            kanjis[chr] = [bookListElt, charSpan];
+            kanjis[chr] = [i, j, k];
           }
         });
       });
     });
     increment_loaded();
+    choose(-1, -1, '');
+  });
+
+  $('#currentBookBox').click(function () {
+    $('#mainPane').toggleClass('selectBook')
+      .removeClass('selectChapter selectChar');
+    if ($('#mainPane').hasClass('selectBook')) {
+      $('#selectorBox').empty();
+      kanjiData.forEach(function (book, i) {
+        $('<button>').text(book.name).appendTo('#selectorBox').data('id', i);
+        $('#selectorBox').append(' ');
+      });
+    }
+  });
+
+  $('#currentChapterBox').click(function () {
+    $('#mainPane').toggleClass('selectChapter')
+      .removeClass('selectBook selectChar');
+    if ($('#mainPane').hasClass('selectChapter')) {
+      if (chosenBook === -1) {
+        $('#mainPane').removeClass('selectChapter');
+        return;
+      }
+      $('#selectorBox').empty();
+      kanjiData[chosenBook].chapters.forEach(function (chapter, i) {
+        $('<button>').text(chapter.name).appendTo('#selectorBox').data('id', i);
+        $('#selectorBox').append(' ');
+      });
+    }
+  });
+
+  $('#currentCharBox').click(function () {
+    $('#mainPane').toggleClass('selectChar')
+      .removeClass('selectBook selectChapter');
+    if ($('#mainPane').hasClass('selectChar')) {
+      if (chosenBook === -1 || chosenChapter === -1) {
+        $('#mainPane').removeClass('selectChar');
+        return;
+      }
+      $('#selectorBox').empty();
+      var list = kanjiData[chosenBook].chapters[chosenChapter].kanji.split('');
+      list.forEach(function (chr, i) {
+        if (chr !== '|' && chr !== '(' && chr !== ')') {
+          $('<button>').text(chr).appendTo('#selectorBox').data('id', i);
+        } else {
+          $('#selectorBox').append(chr);
+        }
+        $('#selectorBox').append(' ');
+      });
+    }
+  });
+
+
+  $('#selectorBox').on('click', 'button', function () {
+    if ($('#mainPane').hasClass('selectBook')) {
+      choose($(this).data('id'), -1, '');
+      $('#currentChapterBox').click();
+    } else if ($('#mainPane').hasClass('selectChapter')) {
+      choose(chosenBook, $(this).data('id'), '');
+      $('#currentCharBox').click();
+    } else if ($('#mainPane').hasClass('selectChar')) {
+      choose(chosenBook, chosenChapter, $(this).text());
+    }
+  });
+
+  function choose(bookId, chapterId, chr) {
+    console.log([bookId, chapterId, chr]);
+    chosenBook = bookId;
+    if (bookId === -1) {
+      $('#currentBookBox').text('---').addClass('none');
+    } else {
+      $('#currentBookBox')
+        .text(kanjiData[bookId].name).removeClass('none');
+    }
+    chosenChapter = chapterId;
+    if (chapterId === -1) {
+      $('#currentChapterBox').text('---').addClass('none');
+    } else {
+      $('#currentChapterBox')
+        .text(kanjiData[bookId].chapters[chapterId].name).removeClass('none');
+    }
+    if (chr === '') {
+      $('#currentCharBox').text('---').addClass('none');
+    } else {
+      $('#currentCharBox').text(chr).removeClass('none');
+      if (chr !== $('#txtChar').val()) {
+        $('#txtChar').val(chr);
+        $('#formChar').submit();
+      }
+    }
+    $('#mainPane').removeClass('selectBook selectChapter selectChar');
+  }
+
+  $('#modalCover').click(function () {
+    $('#mainPane').removeClass('selectBook selectChapter selectChar');
   });
 
   // ################################
@@ -79,11 +156,6 @@ $(function () {
 
   // ################################
   // Kanji selection
-
-  $('#bookChar').on('click', '.chr', function () {
-    $('#txtChar').val($(this).text());
-    $('#formChar').submit();
-  });
 
   var BLANK = '\u3000';
   var wwwjdicUrl = 'http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ';
@@ -118,15 +190,12 @@ $(function () {
       }
     });
     $('#charDesc').show();
-    // Change highlight 
-    var toHighlight = kanjis[c];
-    $('.chr').removeClass('highlight');
-    if (toHighlight) {
-      toHighlight[0].click();
-      toHighlight[1].addClass('highlight');
+    // Change selection 
+    var selection = kanjis[c];
+    if (selection === undefined) {
+      choose(-1, -1, c);
     } else {
-      $('.book-list').removeClass('active');
-      $('.book-char').hide();
+      choose(selection[0], selection[1], c);
     }
     // Open reference
     goToSite();

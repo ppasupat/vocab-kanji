@@ -49,11 +49,31 @@ p {
   left: 0;
   width: 50%;
 }
+#modalCover {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.selectBook #modalCover,
+.selectChapter #modalCover,
+.selectChar #modalCover {
+  display: block;
+}
 #extPane {
   left: 50%;
   width: 50%;
   border: 0;
   border-left: 1px solid #DDD;
+}
+#extFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 @media (max-width: 990px) {
   #mainPane { width: 100%; }
@@ -108,6 +128,18 @@ p {
   border: 1px solid #BBB;
   border-radius: 5px;
 }
+#settingsLink {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: url('cog.png') no-repeat left top;
+}
+#settingsLink:hover {
+  background-position: -16px 0px
+}
 
 /* charSelLower */
 #currentBookBox, #currentChapterBox, #currentCharBox {
@@ -120,87 +152,41 @@ p {
 }
 #currentBookBox {
   left: 0;
-  width: 25%;
+  width: 30%;
   background-color: #C5C5CC;
 }
+.selectBook #currentBookBox {
+  z-index: 80;
+}
+.selectChapter #currentChapterBox {
+  z-index: 80;
+}
+.selectChar #currentCharBox {
+  z-index: 80;
+}
 #currentChapterBox {
-  left: 25%;
-  width: 25%;
+  left: 30%;
+  width: 30%;
   background-color: #D2D2D9;
 }
 #currentCharBox {
-  left: 50%;
-  width: 50%;
+  left: 60%;
+  width: 40%;
   background-color: #DDDDE5;
 }
 #selectorBox {
   position: absolute;
+  display: none;
   width: 100%;
   top: 50px;
   left: 0;
   background-color: blue;
+  z-index: 99;
 }
-
-
-#bookList {
-  padding: 0;
-}
-.book-list {
-  float: left;
-  margin: 2px;
-  padding: 2px;
-  font-size: 18px;
-  width: 28px;
-  height: 20px;
-  line-height: 20px;
-}
-.title {
-  font-weight: bold;
-}
-#charSelLower .chr {
-  color: blue;
-  cursor: pointer;
-  line-height: 1.3;
-}
-#charSelLower .chr:hover {
-  color: red;
-}
-#charSelLower .chr.highlight {
-  color: red;
-}
-#charSelLower .chr.h5 {
-  background-color: #AEA;
-}
-#charSelLower .chr.h6 {
-  background-color: #EAE;
-}
-#charSelLower .chr.h6x {
-  background-color: #E77;
-}
-#charSelLower .chr.extra {
-  background-color: #CCE;
-}
-#charSelLower .chr.what {
-  background-color: #B8D;
-}
-#charSelLower .chr.addendum {
-  background-color: #EE5;
-}
-#charSelLower .chr.moved {
-  background-color: #222;
-  color: #DDD;
-}
-#settingsLink {
+.selectBook #selectorBox,
+.selectChapter #selectorBox,
+.selectChar #selectorBox {
   display: block;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background: url('cog.png') no-repeat left top;
-}
-#settingsLink:hover {
-  background-position: -16px 0px
 }
 
 /* charDispInner */
@@ -254,11 +240,4 @@ p {
 #wordList a.w6 { background-color: #EAD1DC; }
 #clearList {
   height: 15px;
-}
-
-/* External */
-#extFrame {
-  width: 100%;
-  height: 100%;
-  border: 0;
 }
