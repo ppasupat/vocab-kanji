@@ -149,20 +149,12 @@ p {
   line-height: 50px;
   font-size: 28px;
   text-align: center;
+  cursor: pointer;
 }
 #currentBookBox {
   left: 0;
   width: 30%;
   background-color: #C5C5CC;
-}
-.selectBook #currentBookBox {
-  z-index: 80;
-}
-.selectChapter #currentChapterBox {
-  z-index: 80;
-}
-.selectChar #currentCharBox {
-  z-index: 80;
 }
 #currentChapterBox {
   left: 30%;
@@ -174,22 +166,48 @@ p {
   width: 40%;
   background-color: #DDDDE5;
 }
-#selectorBox {
+.selectBook #currentBookBox {
+  z-index: 80;
+}
+.selectChapter #currentChapterBox {
+  z-index: 80;
+}
+.selectChar #currentCharBox {
+  z-index: 80;
+}
+#selectorBoxWrapper {
   position: absolute;
   display: none;
   width: 100%;
   top: 50px;
   left: 0;
-  background-color: blue;
+  background-color: #EEF;
   z-index: 99;
 }
-.selectBook #selectorBox,
-.selectChapter #selectorBox,
-.selectChar #selectorBox {
+.selectBook #selectorBoxWrapper,
+.selectChapter #selectorBoxWrapper,
+.selectChar #selectorBoxWrapper {
   display: block;
 }
+#selectorBox {
+  margin: 10px;
+  font-size: 20px;
+  line-height: 2;
+}
+#selectorBox button {
+  border: 1px solid #BBB;
+  border-radius: 3px;
+  background: #DDD;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 2px 8px;
+}
 
-/* charDispInner */
+/* charDisp */
+#charDisp {
+  height: calc(100% - 100px);
+  overflow: auto;
+}
 #charDispInner, #charDesc {
   padding: 10px;
 }
@@ -207,8 +225,6 @@ p {
   text-align: center;
   z-index: 1;
 }
-
-/* charDesc */
 #charDesc {
   overflow: auto;
 }

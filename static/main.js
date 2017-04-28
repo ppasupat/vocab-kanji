@@ -13,7 +13,7 @@ $(function () {
     parts_not_loaded--;
     if (parts_not_loaded === 0) {
       // Specify ?q=___ to query the character
-      var character = gup('q');
+      var character = gup('q') || '日';
       if (character) {
         $('#txtChar').val(character);
         $('#formChar').submit();
