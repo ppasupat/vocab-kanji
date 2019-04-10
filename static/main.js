@@ -86,7 +86,7 @@ $(function () {
   });
 
   var BLANK = '\u3000';
-  var wwwjdicUrl = 'http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ';
+  var wwwjdicUrl = 'https://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ';
   function getAnchor(text) {
     return $('<a>').text(text)
       .attr('href', wwwjdicUrl + text)
@@ -155,22 +155,22 @@ $(function () {
 
   // Search functions
   var websites = {
-    btnWWWJDIC: 'http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
-    btnYamasa: 'http://www.yamasa.cc/ocjs/kanjidic.nsf/SortedByKanji2THEnglish/',
-    btnKDamage: 'http://kanjidamage.com/kanji/search?q=',
-    btnWikiE: 'http://en.wiktionary.org/wiki/',
-    btnWikiJ: 'http://ja.wiktionary.org/wiki/',
+    btnWWWJDIC: 'https://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
+    btnYamasa: 'https://www.yamasa.cc/ocjs/kanjidic.nsf/SortedByKanji2THEnglish/',
+    btnKDamage: 'https://kanjidamage.com/kanji/search?q=',
+    btnWikiE: 'https://en.wiktionary.org/wiki/',
+    btnWikiJ: 'https://ja.wiktionary.org/wiki/',
     btnKotobank: 'https://kotobank.jp/word/',
-    btnCEty: 'http://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=',
-    btnCChr: 'http://chinese-characters.org/cgi-bin/lookup.cgi?characterInput=',
-    btnChise: 'http://www.chise.org/chisewiki/view.cgi?character=',
-    btnNico: 'http://dic.nicovideo.jp/a/',
-    btnKago: 'http://www5b.biglobe.ne.jp/~shu-sato/kanji/kago.htm',
-    btnKNet: 'http://www.kanjinetworks.com/eng/kanji-dictionary/online-kanji-etymology-dictionary.cfm?kanji_id=',
-    btnZDic: 'http://www.zdic.net/sousuo?q=',
-    btnGGArt: 'http://www.iguci.cn/dictionary/dcontent.php?word=',
-    btnXiu: 'http://www.xiuwenyuan.com/ziyuan/',
-    btnLocalhost: 'http://localhost:' + settings.r + '/?q=',
+    btnCEty: 'https://www.chineseetymology.org/CharacterEtymology.aspx?characterInput=',
+    btnCChr: 'https://chinese-characters.org/cgi-bin/lookup.cgi?characterInput=',
+    btnChise: 'https://www.chise.org/chisewiki/view.cgi?character=',
+    btnNico: 'https://dic.nicovideo.jp/a/',
+    btnKago: 'https://www5b.biglobe.ne.jp/~shu-sato/kanji/kago.htm',
+    btnKNet: 'https://www.kanjinetworks.com/eng/kanji-dictionary/online-kanji-etymology-dictionary.cfm?kanji_id=',
+    btnZDic: 'https://www.zdic.net/sousuo?q=',
+    btnGGArt: 'https://www.iguci.cn/dictionary/dcontent.php?word=',
+    btnXiu: 'https://www.xiuwenyuan.com/ziyuan/',
+    btnLocalhost: 'https://localhost:' + settings.r + '/?q=',
   };
 
   var kagoMap = {}, xiuwenyuanMap;
