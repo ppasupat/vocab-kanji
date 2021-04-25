@@ -4,9 +4,7 @@ $(function () {
   console.log(settings);
 
   var kanjiFile = 'data/kanji/' + settings.k + '.json',
-      kago_json = 'data/reference/kago.json',
-      xiuwenyuan_json = 'data/reference/xiuwenyuan.json',
-      parts_not_loaded = 3 + settings.v.length;
+      parts_not_loaded = 1 + settings.v.length;
 
   // Load data
   function increment_loaded() {
@@ -156,36 +154,13 @@ $(function () {
   // Search functions
   var websites = {
     btnWWWJDIC: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
-    btnYamasa: '//www.yamasa.cc/ocjs/kanjidic.nsf/SortedByKanji2THEnglish/',
-    btnKDamage: '//kanjidamage.com/kanji/search?q=',
+    btnJisho: '//jisho.org/search/%23kanji%20',
     btnWikiE: '//en.wiktionary.org/wiki/',
     btnWikiJ: '//ja.wiktionary.org/wiki/',
     btnKotobank: '//kotobank.jp/word/',
-    btnCEty: '//www.chineseetymology.org/CharacterEtymology.aspx?characterInput=',
-    btnCChr: '//chinese-characters.org/cgi-bin/lookup.cgi?characterInput=',
-    btnChise: '//www.chise.org/chisewiki/view.cgi?character=',
-    btnNico: '//dic.nicovideo.jp/a/',
-    btnKago: '//www5b.biglobe.ne.jp/~shu-sato/kanji/kago.htm',
-    btnKNet: '//www.kanjinetworks.com/eng/kanji-dictionary/online-kanji-etymology-dictionary.cfm?kanji_id=',
-    btnZDic: '//www.zdic.net/sousuo?q=',
-    btnGGArt: '//www.iguci.cn/dictionary/dcontent.php?word=',
-    btnXiu: '//www.xiuwenyuan.com/ziyuan/',
     btnLocalhost: '//localhost:' + settings.r + '/?q=',
   };
 
-  var kagoMap = {}, xiuwenyuanMap;
-  $.getJSON(kago_json, function (data) {
-    data.forEach(function (item) {
-      for (var i = 0; i < item[1].length; i++) {
-        kagoMap[item[1][i]] = item[0];
-      }
-    });
-    increment_loaded();
-  });
-  $.getJSON(xiuwenyuan_json, function (data) {
-    xiuwenyuanMap = data;
-    increment_loaded();
-  });
   if (!settings.r) {
     $('.localhost').hide();
   }
@@ -194,19 +169,7 @@ $(function () {
     if ($('#theChar').text() === BLANK) return;
     var sitename = $('#selSearch').val();
     var target = '';
-    if (sitename === 'btnKago') {
-      target = websites[sitename];
-      var anchor = kagoMap[$('#theChar').text()];
-      if (anchor !== undefined) {
-        target += ('#' + anchor);
-      }
-    } else if (sitename === 'btnXiu') {
-      target = websites[sitename];
-      var page = xiuwenyuanMap[$('#theChar').text()];
-      if (page !== undefined) {
-        target += (page + '.html');
-      }
-    } else if (sitename !== 'btnX') {
+    if (sitename !== 'btnX') {
       target = websites[sitename] + $('#theChar').text();
     }
     $('#extFrame').attr('src', target);
