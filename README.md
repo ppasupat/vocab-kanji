@@ -17,10 +17,8 @@ Words containing the character will be displayed in the middle column.
 
 To view external references on the chosen character:
 
-* Choose an external resource from the dropdown box
-  * Since the page is served on HTTPS, while some external web pages use HTTP,
-    **mixed content protection has to be disabled** to view some resources
-* Clicking on the vocabulary also triggers a search on WWWJDIC
+* Choose an external reference for the kanji from the dropdown box.
+* Clicking on the vocabulary also triggers a search on WWWJDIC.
 
 The web page will be shown in the right column.
 
@@ -45,11 +43,10 @@ Click on the cog button on the lower right of the search box to visit the settin
   and the cores are grouped based on themes
   (e.g., Nature includes 日, 月, 夕, 土, 山, ...).
   The characters include Jouyou kanji and a number of other common characters.
+* **WANI**: [WaniKani](https://www.wanikani.com/kanji)
 * **RTK**: James Heisig's [Remembering the Kanji](https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi), Book 1, 6th edition.
 * **KKLC**: Andrew Scott Conning's [The Kodansha Kanji Learner's Course](https://www.amazon.com/dp/1568365268),
   grouped into chunks of 200 characters.
-
-Please suggest other lists or submit take-down notices in Github issues.
 
 ## Vocabulary Lists
 
@@ -64,6 +61,8 @@ Please suggest other lists or submit take-down notices in Github issues.
   volumes I and II (Beginner)
   ([Source](http://kyoan.u-biq.org/tangosearch.html))
 * **Tobira**: [Tobira: Gateway to Advanced Japanese](http://tobiraweb.9640.jp/) (Intermediate)
+* **WaniKani**: [WaniKani](https://www.wanikani.com/vocabulary)
+* **Common**: Words marked (P) from [JMDict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project)
 
 To be added:
 
