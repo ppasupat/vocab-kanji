@@ -33,10 +33,10 @@ Click on the cog button on the lower right of the search box to visit the settin
 * **GRADE**: [Kyouiku kanji](https://en.wikipedia.org/wiki/Ky%C5%8Diku_kanji)
   are grouped by school grades,
   while [Jouyou kanji](https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji)
-  (as revised in 2010) are grouped based on the 
+  are grouped based on the 
   [Kanji Kentei](http://www.kanken.or.jp/kanken/outline/data/outline_degree_national_list.pdf) levels.
-  Characters are further sorted and grouped by representative readings
-  (usually onyomi).
+  The 2020 list (with prefecture kanji in 4th grade) is used.
+  Characters are further sorted and grouped by representative readings.
 * **NEO**: Ice's Hanzigong-style kanji grouping.
   Characters are grouped based on the visual "core" part
   (usually the phonetic component, but not always),
