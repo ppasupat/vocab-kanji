@@ -156,14 +156,7 @@ $(function () {
     btnWWWJDIC: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
     btnJisho: '//jisho.org/search/%23kanji%20',
     btnWikiE: '//en.wiktionary.org/wiki/',
-    btnWikiJ: '//ja.wiktionary.org/wiki/',
-    btnKotobank: '//kotobank.jp/word/',
-    btnLocalhost: '//localhost:' + settings.r + '/?q=',
   };
-
-  if (!settings.r) {
-    $('.localhost').hide();
-  }
 
   var goToSite = function () {
     if ($('#theChar').text() === BLANK) return;

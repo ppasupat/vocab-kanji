@@ -1,16 +1,5 @@
 // Utilities / Compatibility Functions
 
-// (Array).forEach
-// https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/forEach
-if ( !Array.prototype.forEach ) {
-  Array.prototype.forEach = function(fn, scope) {
-    for(var i = 0, len = this.length; i < len; ++i) {
-      fn.call(scope, this[i], i, this);
-    }
-  };
-}
-
-
 function gup (name) {
   var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
   var results = regex.exec(window.location.href);
@@ -75,8 +64,7 @@ function firstChar(str) {
 // Settings Save / Load
 var DEFAULT_SETTINGS = {
   'k': 'grade',
-  'v': ['n5', 'n4', 'n3', 'n2'],
-  'r': 8001,
+  'v': ['n5', 'n4', 'n3', 'n2', 'n1'],
 };
 
 function loadSettings() {
