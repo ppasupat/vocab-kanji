@@ -1,8 +1,8 @@
 // Utilities / Compatibility Functions
 
 function gup (name) {
-  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-  var results = regex.exec(window.location.href);
+  let regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+  let results = regex.exec(window.location.href);
   if (results === null) {
     return "";
   } else {
@@ -11,8 +11,8 @@ function gup (name) {
 }
 
 function countObjectKeys(obj) {
-  var count = 0;
-  for (var x in obj)
+  let count = 0;
+  for (let x in obj)
     if (obj.hasOwnProperty(x))
       count++;
   return count;
@@ -28,7 +28,7 @@ function countObjectKeys(obj) {
 // Convert the character code into string. Correctly.
 function codeToString(code) {
   if (isNaN(code)) return "";
-  var hi, lo;
+  let hi, lo;
   if (code > 0xFFFF) {
     code = code - 0x10000;
     hi = 0xD800 + (code >> 10);
@@ -40,8 +40,8 @@ function codeToString(code) {
 
 // Convert the first "character" of the string into character code.
 function stringToCode(str) {
-  var code = str.charCodeAt(0);
-  var hi, low;
+  let code = str.charCodeAt(0);
+  let hi, low;
   if (0xD800 <= code && code <= 0xDBFF) {
     // High surrogate
     hi = code;
@@ -62,13 +62,13 @@ function firstChar(str) {
 }
 
 // Settings Save / Load
-var DEFAULT_SETTINGS = {
+const DEFAULT_SETTINGS = {
   'k': 'grade',
   'v': ['n5', 'n4', 'n3', 'n2', 'n1'],
 };
 
 function loadSettings() {
-  var settings = localStorage.getItem('vocab-kanji');
+  let settings = localStorage.getItem('vocab-kanji');
   if (settings === null) {
     return DEFAULT_SETTINGS;
   }

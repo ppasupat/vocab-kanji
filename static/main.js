@@ -1,9 +1,9 @@
 $(function () {
   'use strict';
-  var settings = loadSettings();
+  let settings = loadSettings();
   console.log(settings);
 
-  var kanjiFile = 'data/kanji/' + settings.k + '.json',
+  let kanjiFile = 'data/kanji/' + settings.k + '.json',
       parts_not_loaded = 1 + settings.v.length;
 
   // Load data
@@ -11,7 +11,7 @@ $(function () {
     parts_not_loaded--;
     if (parts_not_loaded === 0) {
       // Specify ?q=___ to query the character
-      var character = gup('q');
+      let character = gup('q');
       if (character) {
         $('#txtChar').val(character);
         $('#formChar').submit();
@@ -22,12 +22,12 @@ $(function () {
   // ################################
   // Kanji
 
-  var kanjis = {};
+  let kanjis = {};
   $.get(kanjiFile, function (data) {
     data.forEach(function (book) {
-      var bookCharElt = $('<div class=book-char>')
+      let bookCharElt = $('<div class=book-char>')
             .appendTo('#bookChar').hide();
-      var bookListElt = $('<div>')
+      let bookListElt = $('<div>')
             .addClass('book-list pink-button unselectable')
             .text(book.shortname).attr('title', book.name)
             .appendTo('#bookList')
@@ -38,7 +38,7 @@ $(function () {
               bookCharElt.show();
             });
       book.chapters.forEach(function (chapter) {
-        var chapterElt = $('<p>').appendTo(bookCharElt)
+        let chapterElt = $('<p>').appendTo(bookCharElt)
           .append($('<span class=title>').text(chapter.name));
         chapter.kanji.split('').forEach(function (chr) {
           if (chr === '|') {
@@ -46,7 +46,7 @@ $(function () {
           } else if (chr === '(' || chr === ')') {
             chapterElt.append(chr);
           } else if (chr !== ' ') {
-            var charSpan = $('<span class=chr>').text(chr);
+            let charSpan = $('<span class=chr>').text(chr);
             chapterElt.append(' ').append(charSpan);
             if (kanjis[chr] !== undefined) {
               console.log('Warning! Repeated character: ' + chr);
@@ -63,9 +63,9 @@ $(function () {
   // Vocab
   // Each item is {name: ___, words: ___}
 
-  var vocab_groups = [];
+  let vocab_groups = [];
   settings.v.forEach(function (name, i) {
-    var group = {'name': name};
+    let group = {'name': name};
     vocab_groups.push(group);
     $.get('data/vocab/' + name + '.txt', function (data) {
       group.words = data.split('\n');
@@ -83,22 +83,25 @@ $(function () {
     $('#formChar').submit();
   });
 
-  var BLANK = '\u3000';
+  const BLANK = '\u3000';
 
   function query() {
-    var c = firstChar($('#txtChar').val());
+    let c = firstChar($('#txtChar').val());
+    latestQuery = c;
+    latestType = 'kanji';
     // Clear the display
     $('#wordList, #jlptList').empty();
     if (!c || c === ' ') {
       $('#theChar').text(BLANK);
       $('#charDesc').hide();
+      latestQuery = null;
       return;
     }
     $('#theChar').text(c);
     // Find vocab
-    var pattern = new RegExp(c);
+    let pattern = new RegExp(c);
     vocab_groups.forEach(function (group, i) {
-      var result = $.grep(group.words, function (word) {
+      let result = $.grep(group.words, function (word) {
         return pattern.test(word);
       });
       if (result.length) {
@@ -111,7 +114,7 @@ $(function () {
     });
     $('#charDesc').show();
     // Change highlight 
-    var toHighlight = kanjis[c];
+    let toHighlight = kanjis[c];
     $('.chr').removeClass('highlight');
     if (toHighlight) {
       toHighlight[0].click();
@@ -121,8 +124,14 @@ $(function () {
       $('.book-char').hide();
     }
     // Open reference
-    goToKanjiSite();
+    goToSite();
   };
+
+  $('#wordList').on('click', 'a', function () {
+    latestQuery = $(this).text();
+    latestType = 'vocab';
+    goToSite();
+  });
   
   $('#formChar').submit(function (event) {
     query();
@@ -146,7 +155,7 @@ $(function () {
   // Reference
 
   // Search functions
-  var websites = {
+  const WEBSITES = {
     btnWWWJDIC: {
       kanji: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
       vocab: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ',
@@ -161,38 +170,27 @@ $(function () {
     },
   };
 
-  var goToKanjiSite = function () {
-    if ($('#theChar').text() === BLANK) return;
-    var sitename = $('#selSearch').val();
-    var target = '';
-    if (sitename !== 'btnX') {
-      target = websites[sitename].kanji + $('#theChar').text();
-    }
-    $('#extFrame').attr('src', target);
-  };
-  $('#selSearch').change(goToKanjiSite);
+  let latestQuery = null, latestType = 'kanji';
 
-  var goToVocabSite = function (query) {
-    var sitename = $('#selSearch').val();
-    var target = '';
-    if (sitename !== 'btnX') {
-      target = websites[sitename].vocab + query;
+  function goToSite() {
+    let sitename = $('#selSearch').val();
+    let target = '';
+    if (sitename !== 'btnX' && latestQuery !== null) {
+      target = WEBSITES[sitename][latestType] + latestQuery;
     }
     $('#extFrame').attr('src', target);
-  };
-  $('#wordList').on('click', 'a', function () {
-    goToVocabSite($(this).text());
-  });
+  }
+  $('#selSearch').change(goToSite);
 
   // ################################
   // Other stuff
 
   // Layout functions
-  var resizer = function () {
-    var sel_height = ($(window).height() - 20
+  let resizer = function () {
+    let sel_height = ($(window).height() - 20
                       - $('#charSelUpper').outerHeight(true));
     $('#charSelLower').height(sel_height);
-    var desc_height = ($(window).height() - 20
+    let desc_height = ($(window).height() - 20
                        - $('#charDispInner').outerHeight(true));
     $('#charDesc').height(desc_height);
   };
