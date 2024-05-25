@@ -215,6 +215,7 @@ p {
 #wordList a.w4 { background-color: #CFE2F3; }
 #wordList a.w5 { background-color: #D2D2E9; }
 #wordList a.w6 { background-color: #EAD1DC; }
+#wordList a.seen { opacity: 30%; }
 #clearList {
   height: 15px;
 }

@@ -99,7 +99,7 @@ $(function () {
     }
     $('#theChar').text(c);
     // Find vocab
-    let pattern = new RegExp(c);
+    let pattern = new RegExp(c), addedWords = {};
     vocab_groups.forEach(function (group, i) {
       let result = $.grep(group.words, function (word) {
         return pattern.test(word);
@@ -107,7 +107,13 @@ $(function () {
       if (result.length) {
         $('#wordList').append($('<h3>').text(group.title));
         result.forEach(function (word) {
-          $('#wordList').append($('<a>').text(word).addClass('w' + (i % 7)));
+          let wordChip = $('<a>').text(word)
+            .addClass('w' + (i % 7)).appendTo('#wordList');
+          if (addedWords[word]) {
+            wordChip.addClass('seen');
+          } else {
+            addedWords[word] = true;
+          }
         });
         $('#wordList').append($('<div class=clear>'));
       }
