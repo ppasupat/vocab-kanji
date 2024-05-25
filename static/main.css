@@ -189,6 +189,7 @@ p {
 }
 #wordList a {
   display: block;
+  cursor: pointer;
   float: left;
   font-size: 20pt;
   line-height: 26pt;

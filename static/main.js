@@ -84,12 +84,6 @@ $(function () {
   });
 
   var BLANK = '\u3000';
-  var wwwjdicUrl = '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ';
-  function getAnchor(text) {
-    return $('<a>').text(text)
-      .attr('href', wwwjdicUrl + text)
-      .attr('target', 'extFrame');
-  }
 
   function query() {
     var c = firstChar($('#txtChar').val());
@@ -110,7 +104,7 @@ $(function () {
       if (result.length) {
         $('#wordList').append($('<h3>').text(group.title));
         result.forEach(function (word) {
-          $('#wordList').append(getAnchor(word).addClass('w' + (i % 7)));
+          $('#wordList').append($('<a>').text(word).addClass('w' + (i % 7)));
         });
         $('#wordList').append($('<div class=clear>'));
       }
@@ -127,7 +121,7 @@ $(function () {
       $('.book-char').hide();
     }
     // Open reference
-    goToSite();
+    goToKanjiSite();
   };
   
   $('#formChar').submit(function (event) {
@@ -153,21 +147,42 @@ $(function () {
 
   // Search functions
   var websites = {
-    btnWWWJDIC: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
-    btnJisho: '//jisho.org/search/%23kanji%20',
-    btnWikiE: '//en.wiktionary.org/wiki/',
+    btnWWWJDIC: {
+      kanji: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MMJ',
+      vocab: '//www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1MUJ',
+    },
+    btnJisho: {
+      kanji: '//jisho.org/search/%23kanji%20',
+      vocab: '//jisho.org/search/',
+    },
+    btnWikiE: {
+      kanji: '//en.wiktionary.org/wiki/',
+      vocab: '//en.wiktionary.org/wiki/',
+    },
   };
 
-  var goToSite = function () {
+  var goToKanjiSite = function () {
     if ($('#theChar').text() === BLANK) return;
     var sitename = $('#selSearch').val();
     var target = '';
     if (sitename !== 'btnX') {
-      target = websites[sitename] + $('#theChar').text();
+      target = websites[sitename].kanji + $('#theChar').text();
     }
     $('#extFrame').attr('src', target);
   };
-  $('#selSearch').change(goToSite);
+  $('#selSearch').change(goToKanjiSite);
+
+  var goToVocabSite = function (query) {
+    var sitename = $('#selSearch').val();
+    var target = '';
+    if (sitename !== 'btnX') {
+      target = websites[sitename].vocab + query;
+    }
+    $('#extFrame').attr('src', target);
+  };
+  $('#wordList').on('click', 'a', function () {
+    goToVocabSite($(this).text());
+  });
 
   // ################################
   // Other stuff
