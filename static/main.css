@@ -49,11 +49,15 @@ p {
   left: 0;
   width: 25%;
   border-right: 1px solid #DDD;
+  display: flex;
+  flex-direction: column;
 }
 #charDisp {
   left: 25%;
   width: 25%;
   z-index: 99;
+  display: flex;
+  flex-direction: column;
 }
 #extWeb {
   left: 50%;
@@ -70,6 +74,7 @@ p {
 #charSelUpper {
   background-color: #EEE;
   border-bottom: 1px solid #DDD;
+  flex: 0 1 auto;
 }
 #charSelUpper div {
   margin-top: 10px;
@@ -95,6 +100,7 @@ p {
 #charSelLower {
   overflow: auto;
   font-size: 18pt;
+  flex: 1 1 auto;
 }
 #bookList {
   padding: 0;
@@ -166,6 +172,7 @@ p {
   text-align: center;
   font-size: 48pt;
   line-height: 56pt;
+  flex: 0 1 auto;
 }
 .big-char {
   font-family: "HGKyokashotai", "EPSON Kyokashotai M", "EPSON 教科書体M", serif;
@@ -179,6 +186,7 @@ p {
 /* charDesc */
 #charDesc {
   overflow: auto;
+  flex: 1 1 auto;
 }
 #charDesc .desc-wrapper {
   clear: both;

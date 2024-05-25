@@ -183,21 +183,8 @@ $(function () {
   $('#selSearch').change(goToSite);
 
   // ################################
-  // Other stuff
-
-  // Layout functions
-  let resizer = function () {
-    let sel_height = ($(window).height() - 20
-                      - $('#charSelUpper').outerHeight(true));
-    $('#charSelLower').height(sel_height);
-    let desc_height = ($(window).height() - 20
-                       - $('#charDispInner').outerHeight(true));
-    $('#charDesc').height(desc_height);
-  };
-  $(window).resize(resizer);
-  resizer();
-
   // Reset fields
+
   $('#txtChar').val('');
   $('#selSearch').val('btnX');
   $('#charDesc').hide();
