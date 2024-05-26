@@ -22,9 +22,19 @@ $(function () {
   // ################################
   // Kanji
 
-  let kanjis = {};
+  let kanjis = {}, kanjiGroups = {};
   $.get(kanjiFile, function (data) {
     data.forEach(function (book) {
+      if (book.special) {
+        if (book.groups) {
+          for (let key in book.groups) {
+            for (let chr of book.groups[key]) {
+              kanjiGroups[chr] = key;
+            }
+          }
+        }
+        return;
+      }
       let bookCharElt = $('<div class=book-char>')
             .appendTo('#bookChar').hide();
       let bookListElt = $('<div>')
@@ -50,6 +60,9 @@ $(function () {
             chapterElt.append(' ').append(charSpan);
             if (kanjis[chr] !== undefined) {
               console.log('Warning! Repeated character: ' + chr);
+            }
+            if (kanjiGroups[chr] !== undefined) {
+              charSpan.addClass(kanjiGroups[chr]);
             }
             kanjis[chr] = [bookListElt, charSpan];
           }

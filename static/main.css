@@ -128,27 +128,11 @@ p {
 #charSelLower .chr.highlight {
   color: red;
 }
-#charSelLower .chr.h5 {
-  background-color: #AEA;
+#charSelLower .chr.k {
+  border-bottom: 2px solid #aea;
 }
-#charSelLower .chr.h6 {
-  background-color: #EAE;
-}
-#charSelLower .chr.h6x {
-  background-color: #E77;
-}
-#charSelLower .chr.extra {
-  background-color: #CCE;
-}
-#charSelLower .chr.what {
-  background-color: #B8D;
-}
-#charSelLower .chr.addendum {
-  background-color: #EE5;
-}
-#charSelLower .chr.moved {
-  background-color: #222;
-  color: #DDD;
+#charSelLower .chr.j {
+  border-bottom: 2px solid #eae;
 }
 #settingsLink {
   display: block;
